@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22291E2013F51C7B00D9F91D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22291E1F13F51C7B00D9F91D /* UIKit.framework */; };
+		22291E2213F51C7B00D9F91D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22291E2113F51C7B00D9F91D /* Foundation.framework */; };
+		22291E2413F51C7B00D9F91D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22291E2313F51C7B00D9F91D /* CoreGraphics.framework */; };
+		22291E2A13F51C7B00D9F91D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22291E2813F51C7B00D9F91D /* InfoPlist.strings */; };
+		22291E2C13F51C7B00D9F91D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22291E2B13F51C7B00D9F91D /* main.m */; };
+		22291E3013F51C7B00D9F91D /* iChessTableAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22291E2F13F51C7B00D9F91D /* iChessTableAppDelegate.m */; };
+		22291E3313F51C7B00D9F91D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22291E3113F51C7B00D9F91D /* MainWindow.xib */; };
+		22291E3613F51C7B00D9F91D /* iChessTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22291E3513F51C7B00D9F91D /* iChessTableViewController.m */; };
+		22291E3913F51C7B00D9F91D /* iChessTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22291E3713F51C7B00D9F91D /* iChessTableViewController.xib */; };
+		22291E4113F51C7C00D9F91D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22291E4013F51C7C00D9F91D /* SenTestingKit.framework */; };
+		22291E4213F51C7C00D9F91D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22291E1F13F51C7B00D9F91D /* UIKit.framework */; };
+		22291E4313F51C7C00D9F91D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22291E2113F51C7B00D9F91D /* Foundation.framework */; };
+		22291E4413F51C7C00D9F91D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22291E2313F51C7B00D9F91D /* CoreGraphics.framework */; };
+		22291E4C13F51C7C00D9F91D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22291E4A13F51C7C00D9F91D /* InfoPlist.strings */; };
+		22291E4E13F51C7C00D9F91D /* iChessTableTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 22291E4D13F51C7C00D9F91D /* iChessTableTests.h */; };
+		22291E5013F51C7C00D9F91D /* iChessTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22291E4F13F51C7C00D9F91D /* iChessTableTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22291E4513F51C7C00D9F91D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22291E1213F51C7B00D9F91D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22291E1A13F51C7B00D9F91D;
+			remoteInfo = iChessTable;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		22291E1B13F51C7B00D9F91D /* iChessTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChessTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22291E1F13F51C7B00D9F91D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		22291E2113F51C7B00D9F91D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		22291E2313F51C7B00D9F91D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		22291E2713F51C7B00D9F91D /* iChessTable-Info.plist */ = {isa = PBXFileReference; path = "iChessTable-Info.plist"; sourceTree = "<group>"; };
+		22291E2913F51C7B00D9F91D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		22291E2B13F51C7B00D9F91D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		22291E2D13F51C7B00D9F91D /* iChessTable-Prefix.pch */ = {isa = PBXFileReference; path = "iChessTable-Prefix.pch"; sourceTree = "<group>"; };
+		22291E2E13F51C7B00D9F91D /* iChessTableAppDelegate.h */ = {isa = PBXFileReference; path = iChessTableAppDelegate.h; sourceTree = "<group>"; };
+		22291E2F13F51C7B00D9F91D /* iChessTableAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iChessTableAppDelegate.m; sourceTree = "<group>"; };
+		22291E3213F51C7B00D9F91D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		22291E3413F51C7B00D9F91D /* iChessTableViewController.h */ = {isa = PBXFileReference; path = iChessTableViewController.h; sourceTree = "<group>"; };
+		22291E3513F51C7B00D9F91D /* iChessTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iChessTableViewController.m; sourceTree = "<group>"; };
+		22291E3813F51C7B00D9F91D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/iChessTableViewController.xib; sourceTree = "<group>"; };
+		22291E3F13F51C7C00D9F91D /* iChessTableTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iChessTableTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22291E4013F51C7C00D9F91D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		22291E4913F51C7C00D9F91D /* iChessTableTests-Info.plist */ = {isa = PBXFileReference; path = "iChessTableTests-Info.plist"; sourceTree = "<group>"; };
+		22291E4B13F51C7C00D9F91D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		22291E4D13F51C7C00D9F91D /* iChessTableTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iChessTableTests.h; sourceTree = "<group>"; };
+		22291E4F13F51C7C00D9F91D /* iChessTableTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iChessTableTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22291E1813F51C7B00D9F91D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22291E2013F51C7B00D9F91D /* UIKit.framework in Frameworks */,
+				22291E2213F51C7B00D9F91D /* Foundation.framework in Frameworks */,
+				22291E2413F51C7B00D9F91D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22291E3B13F51C7C00D9F91D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22291E4113F51C7C00D9F91D /* SenTestingKit.framework in Frameworks */,
+				22291E4213F51C7C00D9F91D /* UIKit.framework in Frameworks */,
+				22291E4313F51C7C00D9F91D /* Foundation.framework in Frameworks */,
+				22291E4413F51C7C00D9F91D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22291E1013F51C7B00D9F91D = {
+			isa = PBXGroup;
+			children = (
+				22291E2513F51C7B00D9F91D /* iChessTable */,
+				22291E4713F51C7C00D9F91D /* iChessTableTests */,
+				22291E1E13F51C7B00D9F91D /* Frameworks */,
+				22291E1C13F51C7B00D9F91D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22291E1C13F51C7B00D9F91D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22291E1B13F51C7B00D9F91D /* iChessTable.app */,
+				22291E3F13F51C7C00D9F91D /* iChessTableTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22291E1E13F51C7B00D9F91D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22291E1F13F51C7B00D9F91D /* UIKit.framework */,
+				22291E2113F51C7B00D9F91D /* Foundation.framework */,
+				22291E2313F51C7B00D9F91D /* CoreGraphics.framework */,
+				22291E4013F51C7C00D9F91D /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22291E2513F51C7B00D9F91D /* iChessTable */ = {
+			isa = PBXGroup;
+			children = (
+				22291E2E13F51C7B00D9F91D /* iChessTableAppDelegate.h */,
+				22291E2F13F51C7B00D9F91D /* iChessTableAppDelegate.m */,
+				22291E3113F51C7B00D9F91D /* MainWindow.xib */,
+				22291E3413F51C7B00D9F91D /* iChessTableViewController.h */,
+				22291E3513F51C7B00D9F91D /* iChessTableViewController.m */,
+				22291E3713F51C7B00D9F91D /* iChessTableViewController.xib */,
+				22291E2613F51C7B00D9F91D /* Supporting Files */,
+			);
+			path = iChessTable;
+			sourceTree = "<group>";
+		};
+		22291E2613F51C7B00D9F91D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22291E2713F51C7B00D9F91D /* iChessTable-Info.plist */,
+				22291E2813F51C7B00D9F91D /* InfoPlist.strings */,
+				22291E2B13F51C7B00D9F91D /* main.m */,
+				22291E2D13F51C7B00D9F91D /* iChessTable-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22291E4713F51C7C00D9F91D /* iChessTableTests */ = {
+			isa = PBXGroup;
+			children = (
+				22291E4D13F51C7C00D9F91D /* iChessTableTests.h */,
+				22291E4F13F51C7C00D9F91D /* iChessTableTests.m */,
+				22291E4813F51C7C00D9F91D /* Supporting Files */,
+			);
+			path = iChessTableTests;
+			sourceTree = "<group>";
+		};
+		22291E4813F51C7C00D9F91D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22291E4913F51C7C00D9F91D /* iChessTableTests-Info.plist */,
+				22291E4A13F51C7C00D9F91D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22291E1A13F51C7B00D9F91D /* iChessTable */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22291E5313F51C7C00D9F91D /* Build configuration list for PBXNativeTarget "iChessTable" */;
+			buildPhases = (
+				22291E1713F51C7B00D9F91D /* Sources */,
+				22291E1813F51C7B00D9F91D /* Frameworks */,
+				22291E1913F51C7B00D9F91D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iChessTable;
+			productName = iChessTable;
+			productReference = 22291E1B13F51C7B00D9F91D /* iChessTable.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22291E3E13F51C7C00D9F91D /* iChessTableTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22291E5613F51C7C00D9F91D /* Build configuration list for PBXNativeTarget "iChessTableTests" */;
+			buildPhases = (
+				22291E3A13F51C7C00D9F91D /* Sources */,
+				22291E3B13F51C7C00D9F91D /* Frameworks */,
+				22291E3C13F51C7C00D9F91D /* Resources */,
+				22291E3D13F51C7C00D9F91D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22291E4613F51C7C00D9F91D /* PBXTargetDependency */,
+			);
+			name = iChessTableTests;
+			productName = iChessTableTests;
+			productReference = 22291E3F13F51C7C00D9F91D /* iChessTableTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22291E1213F51C7B00D9F91D /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 22291E1513F51C7B00D9F91D /* Build configuration list for PBXProject "iChessTable" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 22291E1013F51C7B00D9F91D;
+			productRefGroup = 22291E1C13F51C7B00D9F91D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22291E1A13F51C7B00D9F91D /* iChessTable */,
+				22291E3E13F51C7C00D9F91D /* iChessTableTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22291E1913F51C7B00D9F91D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22291E2A13F51C7B00D9F91D /* InfoPlist.strings in Resources */,
+				22291E3313F51C7B00D9F91D /* MainWindow.xib in Resources */,
+				22291E3913F51C7B00D9F91D /* iChessTableViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22291E3C13F51C7C00D9F91D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22291E4C13F51C7C00D9F91D /* InfoPlist.strings in Resources */,
+				22291E4E13F51C7C00D9F91D /* iChessTableTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22291E3D13F51C7C00D9F91D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22291E1713F51C7B00D9F91D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22291E2C13F51C7B00D9F91D /* main.m in Sources */,
+				22291E3013F51C7B00D9F91D /* iChessTableAppDelegate.m in Sources */,
+				22291E3613F51C7B00D9F91D /* iChessTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22291E3A13F51C7C00D9F91D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22291E5013F51C7C00D9F91D /* iChessTableTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22291E4613F51C7C00D9F91D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22291E1A13F51C7B00D9F91D /* iChessTable */;
+			targetProxy = 22291E4513F51C7C00D9F91D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22291E2813F51C7B00D9F91D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22291E2913F51C7B00D9F91D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		22291E3113F51C7B00D9F91D /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22291E3213F51C7B00D9F91D /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		22291E3713F51C7B00D9F91D /* iChessTableViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22291E3813F51C7B00D9F91D /* en */,
+			);
+			name = iChessTableViewController.xib;
+			sourceTree = "<group>";
+		};
+		22291E4A13F51C7C00D9F91D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22291E4B13F51C7C00D9F91D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22291E5113F51C7C00D9F91D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		22291E5213F51C7C00D9F91D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22291E5413F51C7C00D9F91D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iChessTable/iChessTable-Prefix.pch";
+				INFOPLIST_FILE = "iChessTable/iChessTable-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		22291E5513F51C7C00D9F91D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iChessTable/iChessTable-Prefix.pch";
+				INFOPLIST_FILE = "iChessTable/iChessTable-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		22291E5713F51C7C00D9F91D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iChessTable.app/iChessTable";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iChessTable/iChessTable-Prefix.pch";
+				INFOPLIST_FILE = "iChessTableTests/iChessTableTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		22291E5813F51C7C00D9F91D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iChessTable.app/iChessTable";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iChessTable/iChessTable-Prefix.pch";
+				INFOPLIST_FILE = "iChessTableTests/iChessTableTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22291E1513F51C7B00D9F91D /* Build configuration list for PBXProject "iChessTable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22291E5113F51C7C00D9F91D /* Debug */,
+				22291E5213F51C7C00D9F91D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22291E5313F51C7C00D9F91D /* Build configuration list for PBXNativeTarget "iChessTable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22291E5413F51C7C00D9F91D /* Debug */,
+				22291E5513F51C7C00D9F91D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		22291E5613F51C7C00D9F91D /* Build configuration list for PBXNativeTarget "iChessTableTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22291E5713F51C7C00D9F91D /* Debug */,
+				22291E5813F51C7C00D9F91D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22291E1213F51C7B00D9F91D /* Project object */;
+}
