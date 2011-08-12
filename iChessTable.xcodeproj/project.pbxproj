@@ -23,6 +23,18 @@
 		22291E4C13F51C7C00D9F91D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22291E4A13F51C7C00D9F91D /* InfoPlist.strings */; };
 		22291E4E13F51C7C00D9F91D /* iChessTableTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 22291E4D13F51C7C00D9F91D /* iChessTableTests.h */; };
 		22291E5013F51C7C00D9F91D /* iChessTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22291E4F13F51C7C00D9F91D /* iChessTableTests.m */; };
+		22291E5D13F5211300D9F91D /* ChessGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 22291E5C13F5211200D9F91D /* ChessGame.m */; };
+		22291E6013F5212800D9F91D /* ChessJudge.m in Sources */ = {isa = PBXBuildFile; fileRef = 22291E5F13F5212800D9F91D /* ChessJudge.m */; };
+		22291E6313F5214100D9F91D /* ChessTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 22291E6213F5214100D9F91D /* ChessTable.m */; };
+		22291E6613F5216000D9F91D /* ChessPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 22291E6513F5216000D9F91D /* ChessPiece.m */; };
+		22291E6913F5217600D9F91D /* Chess.m in Sources */ = {isa = PBXBuildFile; fileRef = 22291E6813F5217600D9F91D /* Chess.m */; };
+		22291E6C13F5218D00D9F91D /* ChessStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 22291E6B13F5218C00D9F91D /* ChessStep.m */; };
+		22291E6F13F521A600D9F91D /* ChessPointMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 22291E6E13F521A600D9F91D /* ChessPointMatrix.m */; };
+		22291E7213F521BF00D9F91D /* ChessPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 22291E7113F521BE00D9F91D /* ChessPlayer.m */; };
+		22291E7813F52C0A00D9F91D /* NSString+ChessColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 22291E7713F52C0A00D9F91D /* NSString+ChessColor.m */; };
+		2282D96413F539BE008CA309 /* Othello.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2282D96313F539BE008CA309 /* Othello.plist */; };
+		2282D96A13F53EF1008CA309 /* ChessTemplate.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2282D96913F53EF0008CA309 /* ChessTemplate.plist */; };
+		2282D96F13F56FE3008CA309 /* OthelloRules.m in Sources */ = {isa = PBXBuildFile; fileRef = 2282D96E13F56FE3008CA309 /* OthelloRules.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +68,29 @@
 		22291E4B13F51C7C00D9F91D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22291E4D13F51C7C00D9F91D /* iChessTableTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iChessTableTests.h; sourceTree = "<group>"; };
 		22291E4F13F51C7C00D9F91D /* iChessTableTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iChessTableTests.m; sourceTree = "<group>"; };
+		22291E5A13F51F2B00D9F91D /* ChessRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessRules.h; sourceTree = "<group>"; };
+		22291E5B13F5211200D9F91D /* ChessGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessGame.h; sourceTree = "<group>"; };
+		22291E5C13F5211200D9F91D /* ChessGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessGame.m; sourceTree = "<group>"; };
+		22291E5E13F5212800D9F91D /* ChessJudge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessJudge.h; sourceTree = "<group>"; };
+		22291E5F13F5212800D9F91D /* ChessJudge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessJudge.m; sourceTree = "<group>"; };
+		22291E6113F5214100D9F91D /* ChessTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessTable.h; sourceTree = "<group>"; };
+		22291E6213F5214100D9F91D /* ChessTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessTable.m; sourceTree = "<group>"; };
+		22291E6413F5216000D9F91D /* ChessPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessPiece.h; sourceTree = "<group>"; };
+		22291E6513F5216000D9F91D /* ChessPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessPiece.m; sourceTree = "<group>"; };
+		22291E6713F5217600D9F91D /* Chess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chess.h; sourceTree = "<group>"; };
+		22291E6813F5217600D9F91D /* Chess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chess.m; sourceTree = "<group>"; };
+		22291E6A13F5218C00D9F91D /* ChessStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessStep.h; sourceTree = "<group>"; };
+		22291E6B13F5218C00D9F91D /* ChessStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessStep.m; sourceTree = "<group>"; };
+		22291E6D13F521A500D9F91D /* ChessPointMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessPointMatrix.h; sourceTree = "<group>"; };
+		22291E6E13F521A600D9F91D /* ChessPointMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessPointMatrix.m; sourceTree = "<group>"; };
+		22291E7013F521BE00D9F91D /* ChessPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessPlayer.h; sourceTree = "<group>"; };
+		22291E7113F521BE00D9F91D /* ChessPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessPlayer.m; sourceTree = "<group>"; };
+		22291E7613F52C0A00D9F91D /* NSString+ChessColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ChessColor.h"; sourceTree = "<group>"; };
+		22291E7713F52C0A00D9F91D /* NSString+ChessColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ChessColor.m"; sourceTree = "<group>"; };
+		2282D96313F539BE008CA309 /* Othello.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Othello.plist; sourceTree = "<group>"; };
+		2282D96913F53EF0008CA309 /* ChessTemplate.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChessTemplate.plist; sourceTree = "<group>"; };
+		2282D96D13F56FE3008CA309 /* OthelloRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthelloRules.h; sourceTree = "<group>"; };
+		2282D96E13F56FE3008CA309 /* OthelloRules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthelloRules.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +151,7 @@
 		22291E2513F51C7B00D9F91D /* iChessTable */ = {
 			isa = PBXGroup;
 			children = (
+				22291E5913F51E8600D9F91D /* Model */,
 				22291E2E13F51C7B00D9F91D /* iChessTableAppDelegate.h */,
 				22291E2F13F51C7B00D9F91D /* iChessTableAppDelegate.m */,
 				22291E3113F51C7B00D9F91D /* MainWindow.xib */,
@@ -155,6 +191,60 @@
 				22291E4A13F51C7C00D9F91D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22291E5913F51E8600D9F91D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2282D95F13F5387A008CA309 /* ChessBundle */,
+				22291E5A13F51F2B00D9F91D /* ChessRules.h */,
+				22291E5B13F5211200D9F91D /* ChessGame.h */,
+				22291E5C13F5211200D9F91D /* ChessGame.m */,
+				22291E5E13F5212800D9F91D /* ChessJudge.h */,
+				22291E5F13F5212800D9F91D /* ChessJudge.m */,
+				22291E6113F5214100D9F91D /* ChessTable.h */,
+				22291E6213F5214100D9F91D /* ChessTable.m */,
+				22291E6413F5216000D9F91D /* ChessPiece.h */,
+				22291E6513F5216000D9F91D /* ChessPiece.m */,
+				22291E6713F5217600D9F91D /* Chess.h */,
+				22291E6813F5217600D9F91D /* Chess.m */,
+				22291E6A13F5218C00D9F91D /* ChessStep.h */,
+				22291E6B13F5218C00D9F91D /* ChessStep.m */,
+				22291E6D13F521A500D9F91D /* ChessPointMatrix.h */,
+				22291E6E13F521A600D9F91D /* ChessPointMatrix.m */,
+				22291E7013F521BE00D9F91D /* ChessPlayer.h */,
+				22291E7113F521BE00D9F91D /* ChessPlayer.m */,
+				22291E7613F52C0A00D9F91D /* NSString+ChessColor.h */,
+				22291E7713F52C0A00D9F91D /* NSString+ChessColor.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2282D95F13F5387A008CA309 /* ChessBundle */ = {
+			isa = PBXGroup;
+			children = (
+				2282D96B13F56F25008CA309 /* Othello */,
+				2282D96913F53EF0008CA309 /* ChessTemplate.plist */,
+			);
+			name = ChessBundle;
+			sourceTree = "<group>";
+		};
+		2282D96B13F56F25008CA309 /* Othello */ = {
+			isa = PBXGroup;
+			children = (
+				2282D96C13F56F44008CA309 /* piecesImages */,
+				2282D96313F539BE008CA309 /* Othello.plist */,
+				2282D96D13F56FE3008CA309 /* OthelloRules.h */,
+				2282D96E13F56FE3008CA309 /* OthelloRules.m */,
+			);
+			name = Othello;
+			sourceTree = "<group>";
+		};
+		2282D96C13F56F44008CA309 /* piecesImages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = piecesImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +317,8 @@
 				22291E2A13F51C7B00D9F91D /* InfoPlist.strings in Resources */,
 				22291E3313F51C7B00D9F91D /* MainWindow.xib in Resources */,
 				22291E3913F51C7B00D9F91D /* iChessTableViewController.xib in Resources */,
+				2282D96413F539BE008CA309 /* Othello.plist in Resources */,
+				2282D96A13F53EF1008CA309 /* ChessTemplate.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +357,16 @@
 				22291E2C13F51C7B00D9F91D /* main.m in Sources */,
 				22291E3013F51C7B00D9F91D /* iChessTableAppDelegate.m in Sources */,
 				22291E3613F51C7B00D9F91D /* iChessTableViewController.m in Sources */,
+				22291E5D13F5211300D9F91D /* ChessGame.m in Sources */,
+				22291E6013F5212800D9F91D /* ChessJudge.m in Sources */,
+				22291E6313F5214100D9F91D /* ChessTable.m in Sources */,
+				22291E6613F5216000D9F91D /* ChessPiece.m in Sources */,
+				22291E6913F5217600D9F91D /* Chess.m in Sources */,
+				22291E6C13F5218D00D9F91D /* ChessStep.m in Sources */,
+				22291E6F13F521A600D9F91D /* ChessPointMatrix.m in Sources */,
+				22291E7213F521BF00D9F91D /* ChessPlayer.m in Sources */,
+				22291E7813F52C0A00D9F91D /* NSString+ChessColor.m in Sources */,
+				2282D96F13F56FE3008CA309 /* OthelloRules.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +436,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"$(inherited)",
+					DEBUG_MODE,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -446,6 +548,7 @@
 				22291E5513F51C7C00D9F91D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22291E5613F51C7C00D9F91D /* Build configuration list for PBXNativeTarget "iChessTableTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +557,7 @@
 				22291E5813F51C7C00D9F91D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

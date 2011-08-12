@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Othello</string>
+	<key>table</key>
+	<dict>
+		<key>image</key>
+		<string></string>
+	</dict>
+	<key>rules</key>
+	<string>test</string>
+	<key>pieces</key>
+	<dict>
+		<key>chessWhiteColor</key>
+		<dict>
+			<key>roundPiece</key>
+			<integer>-1</integer>
+		</dict>
+		<key>chessBlackColor</key>
+		<dict>
+			<key>roundPiece</key>
+			<integer>-1</integer>
+		</dict>
+	</dict>
+	<key>pieceModel</key>
+	<dict>
+		<key>roundPiece</key>
+		<dict>
+			<key>chessName</key>
+			<string>othello</string>
+			<key>name</key>
+			<string>round</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
