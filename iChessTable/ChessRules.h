@@ -11,14 +11,14 @@
 @class ChessTable;
 @class ChessPoint;
 @class ChessStep;
-@class ChessColor;
+@class Chess;
 
 @protocol ChessRules <NSObject>
 
 @required
 
 //reset the game table to the original status
--(void)resetTable:(ChessTable*)table;
+-(void)resetChessTable:(Chess*)chess;
 //check if dropping in the table is legal or not
 -(BOOL)isDroppingLegal:(ChessPoint*)point inTable:(ChessTable*)table;
 //check if the moving in table is legal or not

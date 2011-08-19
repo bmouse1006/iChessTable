@@ -7,15 +7,22 @@
 //
 
 #import "NSString+ChessColor.h"
+#import "ChessPiece.h"
 
 @implementation NSString (NSString_ChessColor)
 
-+(NSString*)chessBlackColor{
-    return CHESSBLACKCOLOR;
-}
-
-+(NSString*)chessWhiteColor{
-    return CHESSWHITECOLOR;
++(NSString*)chessColorString:(ChessColor)color{
+    NSString* colorStr = nil;
+    switch (color) {
+        case ChessBlackColor:
+            colorStr = CHESSBLACKCOLOR;
+            break;
+        case ChessWhiteColor:
+            colorStr = CHESSWHITECOLOR;
+        default:
+            break;
+    }
+    return colorStr;
 }
 
 @end

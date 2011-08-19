@@ -7,17 +7,108 @@
 //
 
 #import "ChessStep.h"
+#import "NSArray+ChessHelper.h"
+
+@implementation ChessSingleStep
+
+@synthesize type = _type;
+@synthesize piece = _piece;
+@synthesize pointFrom = _pointFrom;
+@synthesize pointTo = _pointTo;
+
+-(ChessSingleStep*)reverse{
+    ChessSingleStep* reversed = [[ChessSingleStep alloc] init];
+    reversed.piece = self.piece;
+    reversed.pointFrom = self.pointFrom;
+    switch (self.type) {
+        case ChessSingleStepTypeAdd:
+            reversed.type = ChessSingleStepTypeDelete;
+            break;
+        case ChessSingleStepTypeDelete:
+            reversed.type = ChessSingleStepTypeAdd;
+            break;
+        case ChessSingleStepTypeMove:
+            reversed.type = ChessSingleStepTypeMove;
+            reversed.pointFrom = self.pointTo;
+            reversed.pointTo = self.pointFrom;
+        default:
+            break;
+    }
+    
+    return [reversed autorelease];
+}
+
+-(void)dealloc{
+    self.piece = nil;
+    self.pointFrom = nil;
+    self.pointTo = nil;
+    [super dealloc];
+}
+
+@end
 
 @implementation ChessStep
+
+@synthesize singleSteps = _singleSteps;
+
+-(ChessStep*)reverse{
+    ChessStep* reversedStep = [[ChessStep alloc] init];
+    
+    NSEnumerator* enumerator = [self.singleSteps reverseObjectEnumerator];
+    ChessSingleStep* step = nil;
+    while (step = [enumerator nextObject]){
+        [reversedStep.singleSteps addObject:[step reverse]];
+    }
+    
+    return [reversedStep autorelease];
+}
+
+-(void)addPiece:(ChessPiece*)piece at:(MatrixPoint*)location{
+    ChessSingleStep* step = [[ChessSingleStep alloc] init];
+    step.type = ChessSingleStepTypeAdd;
+    step.piece = piece;
+    step.pointFrom = location; 
+    [self.singleSteps addObject:step];
+    [step release];
+}
+
+-(void)removePiece:(ChessPiece*)piece at:(MatrixPoint*)location{
+    ChessSingleStep* step = [[ChessSingleStep alloc] init];
+    step.type = ChessSingleStepTypeDelete;
+    step.piece = piece;
+    step.pointFrom = location; 
+    [self.singleSteps addObject:step];
+    [step release];
+}
+
+-(void)movePiece:(ChessPiece*)piece from:(MatrixPoint*)fromLocation to:(MatrixPoint*)toLocation{
+    ChessSingleStep* step = [[ChessSingleStep alloc] init];
+    step.type = ChessSingleStepTypeMove;
+    step.piece = piece;
+    step.pointFrom = fromLocation; 
+    step.pointTo = toLocation;
+    [self.singleSteps addObject:step];
+    [step release];
+}
+
+-(NSEnumerator*)singleStepEnumerator{
+    return [self.singleSteps objectEnumerator];
+}
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        // Initialization code here.
+        self.singleSteps = [NSMutableArray arrayWithCapacity:0];
+        
     }
     
     return self;
+}
+
+-(void)dealloc{
+    self.singleSteps = nil;
+    [super dealloc];
 }
 
 @end

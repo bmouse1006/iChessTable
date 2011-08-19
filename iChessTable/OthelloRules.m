@@ -7,10 +7,44 @@
 //
 
 #import "OthelloRules.h"
+#import "Chess.h"
+#import "ChessTable.h"
+#import "ChessMatrix.h"
+#import "ChessPiece.h"
+
+#define OTHELLO_ROUND_PIECE @"roundPiece"
 
 @implementation OthelloRules
 
--(void)resetTable:(ChessTable*)table{
+-(void)resetChessTable:(Chess*)chess{
+    //original status
+    //all point has no piece except following four
+    //7,7 white
+    //8,7 black
+    //7,8 black
+    //8,8 white
+    MatrixPoint* point = [[MatrixPoint alloc] init];
+    point.x = 7;
+    point.y = 7;
+    [chess.table.matrix setPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
+                                                 color:ChessWhiteColor]
+                              at:point];
+    point.x = 7;
+    point.y = 8;
+    [chess.table.matrix setPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
+                                                 color:ChessBlackColor]
+                              at:point];
+    point.x = 8;
+    point.y = 7;
+    [chess.table.matrix setPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
+                                                 color:ChessBlackColor]
+                              at:point];
+    point.x = 8;
+    point.y = 8;
+    [chess.table.matrix setPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
+                                                 color:ChessWhiteColor]
+                              at:point];
+    [point release];
     
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "ChessPiece.h"
+#import "NSString+ChessColor.h"
 
 @implementation ChessPiece
 
@@ -14,7 +15,7 @@
 @synthesize name = _name;
 @synthesize color = _color;
 
-+(ChessPiece*)chessPieceWithProperyList:(NSDictionary*)plist andColor:(NSString *)color{
++(ChessPiece*)chessPieceWithProperyList:(NSDictionary*)plist andColor:(ChessColor)color{
     ChessPiece* piece = nil;
     @try {
         piece = [[[ChessPiece alloc] init] autorelease];
@@ -34,7 +35,7 @@
 }
 
 -(NSString*)getImageName{
-    return [NSString stringWithFormat:@"%@_%@_%@", self.chessName, self.name, self.color];
+    return [NSString stringWithFormat:@"%@_%@_%@", self.chessName, self.name, [NSString chessColorString:self.color]];
 }
 
 - (id)init
@@ -50,7 +51,6 @@
 -(void)dealloc{
     self.chessName = nil;
     self.name = nil;
-    self.color = nil;
     [super dealloc];
 }
 

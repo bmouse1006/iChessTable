@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ChessPiece.h"
 
 #define CHESSBLACKCOLOR @"chessBlackColor"
 #define CHESSWHITECOLOR @"chessWhiteColor"
 
 @interface NSString (NSString_ChessColor)
 
-+(NSString*)chessBlackColor;
-+(NSString*)chessWhiteColor;
++(NSString*)chessColorString:(ChessColor)color;
 
 @end
