@@ -7,14 +7,16 @@
 //
 
 #import "ChessPieceView.h"
+#import "ChessPiece.h"
 
 @implementation ChessPieceView
 
-- (id)init
+- (id)initWithChessPiece:(ChessPiece*)piece
 {
     self = [super init];
     if (self) {
         // Initialization code here.
+        self.image = [UIImage imageNamed:piece.imageName];
     }
     
     return self;

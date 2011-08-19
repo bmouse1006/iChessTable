@@ -10,4 +10,6 @@
 
 @interface NSArray (NSArray_ChessHelper)
 
+-(NSArray*)reversedArray;
+
 @end
