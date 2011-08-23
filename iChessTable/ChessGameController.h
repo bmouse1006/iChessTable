@@ -8,22 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
-@class Chess;
-@class ChessJudge;
-@class ChessPlayer;
-@class ChessViewController;
+@class Chess, ChessJudge, ChessPlayer;
 
 @interface ChessGameController : NSObject{
     Chess* _chess;
     ChessJudge* _judge;
     ChessPlayer* _playerAI;
-    
-    ChessViewController* _viewController;
+    ChessGameMode _mode;
 }
 
 @property (nonatomic, retain) Chess* chess;
 @property (nonatomic, retain) ChessJudge* judge;
 @property (nonatomic, retain) ChessPlayer* playerAI;
-@property (nonatomic, retain) ChessViewController* viewController;
+@property (nonatomic, assign) ChessGameMode mode;
+
+//create a new game controller via chess bundle name
++(ChessGameController*)gameControllerWithChessBundleName:(NSString*)name;
+
+-(void)registerNotifications;
+-(void)unregisterNotifications;
 
 @end

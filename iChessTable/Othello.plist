@@ -6,12 +6,16 @@
 	<string>Othello</string>
 	<key>table</key>
 	<dict>
-		<key>bkImage</key>
+		<key>bkImageName</key>
 		<string>testbkimage</string>
-		<key>height</key>
+		<key>horiNodes</key>
+		<integer>16</integer>
+		<key>vertNodes</key>
 		<integer>16</integer>
 		<key>width</key>
-		<integer>16</integer>
+		<integer>700</integer>
+		<key>height</key>
+		<integer>700</integer>
 	</dict>
 	<key>rules</key>
 	<string>OthelloRules</string>

@@ -10,6 +10,8 @@
 
 @implementation ChessViewController
 
+@synthesize table = _table;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -17,6 +19,11 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)dealloc{
+    [self.table release];
+    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,34 +7,39 @@
 //
 
 #import "ChessMatrix.h"
+#import "ChessPiece.h"
 
 @implementation ChessMatrix
 
 @synthesize pieceSet = _pieceSet;
 @synthesize removedPieces = _removedPieces;
-@synthesize height = _height;
-@synthesize width = _width;
+@synthesize horiNodes = _horiNodes;
+@synthesize vertNodes = _vertNodes;
 
 //add a new piece to point
--(void)setPiece:(ChessPiece*)piece at:(MatrixPoint*)location{
+-(void)addPiece:(ChessPiece*)piece to:(MatrixPoint*)location{
     if ([self isLocationInTheMatrix:location]){
+        piece.origin = location;
         [self.pieceSet addObject:piece];
         _matrix[location.x][location.y] = piece;
     }
 }
 //remove piece piece from location
--(void)removePieceFrom:(MatrixPoint*)location{
+-(void)removePiece:(ChessPiece*)piece from:(MatrixPoint*)location{
     if ([self isLocationInTheMatrix:location]){
-        ChessPiece* piece = _matrix[location.x][location.y];
-        [self.removedPieces addObject:piece];
-        [self.pieceSet removeObject:piece];
-        _matrix[location.x][location.y] = nil;
+//        if (piece == _matrix[location.x][location.y]){
+        [piece.origin offTable];
+            [self.removedPieces addObject:piece];
+            [self.pieceSet removeObject:piece];
+            _matrix[location.x][location.y] = nil;
+//        }
     }
 }
 //move an existing piece from point to another point
 -(void)movePiece:(ChessPiece*)piece from:(MatrixPoint*)fromPoint to:(MatrixPoint*)toPoint{
     if ([self isLocationInTheMatrix:fromPoint] &&
         [self isLocationInTheMatrix:toPoint]){
+        piece.origin = toPoint;
         _matrix[toPoint.x][toPoint.y] = _matrix[fromPoint.x][fromPoint.y];
         _matrix[fromPoint.x][fromPoint.y] = nil;
     }
@@ -46,10 +51,7 @@
 }
 //get location of given piece
 -(MatrixPoint*)locationOfPiece:(ChessPiece*)piece{
-    //need to meantain another index.....otherwise it will be very time wasting
-    //maybe it's not required
-    MatrixPoint* point = nil;
-    return point;
+    return piece.origin;
 }
 
 //check if the location is in scope of matrix
@@ -59,7 +61,7 @@
         result = NO;
     }
     
-    if (point.x >= self.width || point.y >= self.height){
+    if (point.x >= self.horiNodes || point.y >= self.vertNodes){
         result = NO;
     }
     
@@ -90,5 +92,21 @@
 
 @synthesize x = _x;
 @synthesize y = _y;
+
++(MatrixPoint*)pointWithX:(int)x andY:(int)y{
+    MatrixPoint* point = [[MatrixPoint alloc] init];
+    point.x = x;
+    point.y = y;
+    return [point autorelease];
+}
+
+-(void)offTable{
+    self.x = -1;
+    self.y = -1;
+}
+
+-(BOOL)isOffTable{
+    return (self.x == -1 || self.y == -1);
+}
 
 @end

@@ -10,6 +10,16 @@
 
 @implementation ChessJudge
 
+@synthesize rules = _rules;
+
++(ChessJudge*)judgeWithRules:(id<ChessRules>)rules{
+    ChessJudge* judge = [[ChessJudge alloc] init];
+    //add more code here
+    judge.rules = rules;
+    
+    return [judge autorelease];
+}
+
 - (id)init
 {
     self = [super init];
@@ -18,6 +28,11 @@
     }
     
     return self;
+}
+
+-(void)dealloc{
+    self.rules = nil;
+    [super dealloc];
 }
 
 @end

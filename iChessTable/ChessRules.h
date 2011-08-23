@@ -8,10 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class ChessTable;
-@class ChessPoint;
-@class ChessStep;
-@class Chess;
+@class ChessTable, ChessPoint, ChessStep, Chess;
 
 @protocol ChessRules <NSObject>
 

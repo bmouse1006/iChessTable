@@ -18,6 +18,11 @@
 @property (nonatomic, assign) int x;
 @property (nonatomic, assign) int y;
 
++(MatrixPoint*)pointWithX:(int)x andY:(int)y;
+
+-(void)offTable;
+-(BOOL)isOffTable;
+
 @end
 
 #define MAX_LENGTH_OF_TABLE 40
@@ -32,19 +37,19 @@
     NSMutableSet* _removedPieces;
     
     //size of the matrix
-    int _height;
-    int _width;
+    int _horiNodes;
+    int _vertNodes;
 }
 
-@property (nonatomic, assign) int height;
-@property (nonatomic, assign) int width;
+@property (nonatomic, assign) int horiNodes;
+@property (nonatomic, assign) int vertNodes;
 @property (nonatomic, retain) NSMutableSet* pieceSet;
 @property (nonatomic, retain) NSMutableSet* removedPieces;
 
 //add a new piece to point
--(void)setPiece:(ChessPiece*)piece at:(MatrixPoint*)location;
+-(void)addPiece:(ChessPiece*)piece to:(MatrixPoint*)location;
 //remove piece piece from location
--(void)removePieceFrom:(MatrixPoint*)location;
+-(void)removePiece:(ChessPiece*)piece from:(MatrixPoint*)location;
 //move an existing piece from point to another point
 -(void)movePiece:(ChessPiece*)piece from:(MatrixPoint*)fromPoint to:(MatrixPoint*)toPoint;
 

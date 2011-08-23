@@ -7,6 +7,7 @@
 //
 
 #import "ChessPiece.h"
+#import "ChessMatrix.h"
 #import "NSString+ChessColor.h"
 
 @implementation ChessPiece
@@ -14,6 +15,7 @@
 @synthesize chessName = _chessName;
 @synthesize name = _name;
 @synthesize color = _color;
+@synthesize origin = _origin;
 
 +(ChessPiece*)chessPieceWithProperyList:(NSDictionary*)plist andColor:(ChessColor)color{
     ChessPiece* piece = nil;
@@ -22,6 +24,7 @@
         piece.color = color;
         piece.name = [plist valueForKey:@"name"];
         piece.chessName = [plist valueForKey:@"chessName"];
+        piece.origin = [MatrixPoint pointWithX:-1 andY:-1];
     }
     @catch (NSException *exception) {
         DebugLog(@"exp happened. reason is %@", exception.reason);
@@ -35,7 +38,9 @@
 }
 
 -(NSString*)getImageName{
-    return [NSString stringWithFormat:@"%@_%@_%@", self.chessName, self.name, [NSString chessColorString:self.color]];
+    NSString* name = [NSString stringWithFormat:@"%@_%@_%@", self.chessName, self.name, [NSString chessColorString:self.color]];
+    //add more code in the future for different devices - iPhone and iPad
+    return name;
 }
 
 - (id)init
@@ -51,6 +56,7 @@
 -(void)dealloc{
     self.chessName = nil;
     self.name = nil;
+    self.origin = nil;
     [super dealloc];
 }
 

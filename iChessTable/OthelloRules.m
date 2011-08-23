@@ -26,24 +26,24 @@
     MatrixPoint* point = [[MatrixPoint alloc] init];
     point.x = 7;
     point.y = 7;
-    [chess.table.matrix setPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
+    [chess.table.matrix addPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
                                                  color:ChessWhiteColor]
-                              at:point];
+                              to:[MatrixPoint pointWithX:7 andY:7]];
     point.x = 7;
     point.y = 8;
-    [chess.table.matrix setPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
+    [chess.table.matrix addPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
                                                  color:ChessBlackColor]
-                              at:point];
+                              to:point];
     point.x = 8;
     point.y = 7;
-    [chess.table.matrix setPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
+    [chess.table.matrix addPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
                                                  color:ChessBlackColor]
-                              at:point];
+                              to:point];
     point.x = 8;
     point.y = 8;
-    [chess.table.matrix setPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
+    [chess.table.matrix addPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
                                                  color:ChessWhiteColor]
-                              at:point];
+                              to:point];
     [point release];
     
 }

@@ -11,8 +11,11 @@
 @class ChessPiece;
 
 @interface ChessPieceView : UIImageView{
+    ChessPiece* _piece;
 }
 
-- (id)initWithChessPiece:(ChessPiece*)piece;
+@property (nonatomic, retain) ChessPiece* piece;
+
+-(id)initWithChessPiece:(ChessPiece*)piece;
 
 @end

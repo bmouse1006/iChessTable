@@ -11,15 +11,30 @@
 
 @implementation ChessPieceView
 
-- (id)initWithChessPiece:(ChessPiece*)piece
+@synthesize piece = _piece;
+
+- (id)init
 {
     self = [super init];
     if (self) {
         // Initialization code here.
-        self.image = [UIImage imageNamed:piece.imageName];
     }
     
     return self;
+}
+
+-(id)initWithChessPiece:(ChessPiece*)piece{
+    self = [super initWithImage:[UIImage imageNamed:piece.imageName]];
+    if (self){
+        self.piece = piece;
+    }
+    
+    return self;
+}
+
+-(void)dealloc{
+    self.piece = nil;
+    [super dealloc];
 }
 
 @end

@@ -8,21 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
+@class MatrixPoint;
+
 typedef enum {
     ChessBlackColor = 1,
     ChessWhiteColor
 } ChessColor;
 
 @interface ChessPiece : NSObject{
-    
     NSString* _name;
     NSString* _chessName;
+    MatrixPoint* _origin;
     ChessColor _color;
 }
 
 @property (nonatomic, retain) NSString* name;
 @property (nonatomic, retain) NSString* chessName;
 @property (nonatomic, assign) ChessColor color;
+@property (nonatomic, retain) MatrixPoint* origin;
 @property (nonatomic, readonly, getter = getImageName) NSString* imageName;//combined by chessname+name+color
 
 //generate a new chess by given property list

@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class MatrixPoint;
-@class ChessPiece;
+@class MatrixPoint, ChessPiece;
 
 typedef enum {
     ChessSingleStepTypeAdd = 1,

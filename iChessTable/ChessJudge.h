@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ChessRules.h"
 
-@interface ChessJudge : NSObject
+@interface ChessJudge : NSObject{
+    id<ChessRules> _rules;
+}
+
+@property (nonatomic, retain) id<ChessRules> rules;
+
+//generate a new judge with given rules
++(ChessJudge*)judgeWithRules:(id<ChessRules>)rules;
 
 @end

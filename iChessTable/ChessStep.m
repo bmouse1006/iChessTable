@@ -19,7 +19,7 @@
 -(ChessSingleStep*)reverse{
     ChessSingleStep* reversed = [[ChessSingleStep alloc] init];
     reversed.piece = self.piece;
-    reversed.pointFrom = self.pointFrom;
+    reversed.pointTo = self.pointTo;
     switch (self.type) {
         case ChessSingleStepTypeAdd:
             reversed.type = ChessSingleStepTypeDelete;

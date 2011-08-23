@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChessViewController : UIViewController
+@class ChessTable;
+
+@interface ChessViewController : UIViewController{
+    ChessTable* _table;
+}
+
+@property (nonatomic, retain) ChessTable* table;
 
 @end
