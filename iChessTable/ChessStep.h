@@ -19,14 +19,14 @@ typedef enum {
 @interface ChessSingleStep : NSObject {
     ChessSingleStepType _type;
     ChessPiece* _piece;
-    MatrixPoint* _pointFrom;
-    MatrixPoint* _pointTo;//this only works while type is move
+    MatrixPoint* _from;//this only works while type is move
+    MatrixPoint* _to;
 }
 
 @property (nonatomic, assign) ChessSingleStepType type;
 @property (nonatomic, retain) ChessPiece* piece;
-@property (nonatomic, retain) MatrixPoint* pointFrom;
-@property (nonatomic, retain) MatrixPoint* pointTo;
+@property (nonatomic, retain) MatrixPoint* from;
+@property (nonatomic, retain) MatrixPoint* to;
 
 //reversed single step
 -(ChessSingleStep*)reverse;

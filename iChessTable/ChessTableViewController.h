@@ -9,27 +9,29 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChessViewControllerDelegate.h"
 
-@class ChessTable, ChessTableView, ChessPiece, ChessPieceView, MatrixPoint;
+@class ChessTable, ChessTableView, ChessPiece, ChessPieceView, MatrixPoint, ChessGameController;
 
-@interface ChessTableViewController : UIViewController{
+@interface ChessTableViewController : UIViewController<ChessViewControllerDelegate>{
+    
     ChessTable* _table;
+    ChessGameController* _game;
     ChessTableView* _tableView;
-    float _gridNodeWidth;
-    float _gridNodeHeight;
-    //frame for the chess table, inside table view
-    CGRect _tableRect;
+    ChessPieceView* _pieceViewMatrix[MAX_LENGTH_OF_TABLE][MAX_LENGTH_OF_TABLE];
+    
+    ChessPieceView* _selectedPieceView;
 }
 
 @property (nonatomic, retain, setter = setTable:) ChessTable* table;
+@property (nonatomic, retain) ChessGameController* game;
 @property (nonatomic, retain) ChessTableView* tableView;
-@property (nonatomic, assign) float gridNodeWidth;
-@property (nonatomic, assign) float gridNodeHeight;
-@property (nonatomic, assign) CGRect tableRect;
+@property (nonatomic, retain) ChessPieceView* selectedPieceView;//only one selected piece view
 
 +(id)tableViewControllerWithChessTable:(ChessTable*)table;
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil chessTable:(ChessTable*)table;
 
+//get center point for the given piece
 -(CGPoint)centerPointForPiece:(ChessPiece*)piece;
 
 //piece view control
@@ -40,5 +42,8 @@
 //register/unregister notifications from game controller
 -(void)registerNotifications:(id)object;
 -(void)unregisterNotifications:(id)object;
+
+//send out notifications
+-(void)postNotificaiotnWithName:(NSString*)name piece:(ChessPiece*)piece from:(MatrixPoint*)from to:(MatrixPoint*)to;
 
 @end

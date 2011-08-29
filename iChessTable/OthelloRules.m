@@ -48,24 +48,40 @@
     
 }
 
--(BOOL)isDroppingLegal:(ChessPoint*)point inTable:(ChessTable*)table{
+-(BOOL)pieceMovingAllowed{
     return NO;
 }
 
--(BOOL)isMovingLegal:(NSArray*)pointArray inTable:(ChessTable*)table{
-    return NO;
+-(ChessColor)firstPlayColor{
+    return ChessWhiteColor;
 }
 
--(ChessStep*)generateStepForDropping:(ChessPoint*)point inTable:(ChessTable*)table{
+-(BOOL)isSelectLegal:(MatrixPoint*)point table:(ChessTable*)table{
+    return YES;
+}
+//check if dropping in the table is legal or not
+-(BOOL)isDroppingLegal:(MatrixPoint*)point table:(ChessTable*)table{
+    return YES;
+}
+//check if the moving in table is legal or not
+-(BOOL)isMoveLegalFrom:(MatrixPoint*)from to:(MatrixPoint*)to table:(ChessTable*)table{
+    return YES;
+}
+//generate a step for dropping in the table. This instance of step will be passed to table to move/add/delete piece
+-(ChessStep*)generateStepForDropping:(ChessPiece*)piece to:(MatrixPoint*)to inTable:(ChessTable*)table{
     return nil;
 }
-
--(ChessStep*)generateStepForMoving:(NSArray*)pointArray inTable:(ChessTable*)table{
+-(ChessStep*)generateStepForMovingFrom:(MatrixPoint*)from to:(MatrixPoint*)to table:(ChessTable*)table{
     return nil;
 }
+//check if the player is winner
+-(ChessColor)winnerInTable:(ChessTable*)table{
+    //add more code later
+    return ChessNoneColor;
+}
 
--(BOOL)doesCurrentPlayerWin:(ChessTable*)table color:(NSString*)color{
-    return NO;
+-(ChessColor)firstHandPlayer{
+    return ChessNoneColor;
 }
 
 @end

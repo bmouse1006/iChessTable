@@ -11,6 +11,7 @@
 
 #define CHESSBLACKCOLOR @"chessBlackColor"
 #define CHESSWHITECOLOR @"chessWhiteColor"
+#define CHESSNONECOLOR @"chessNoneColor"
 
 @interface NSString (NSString_ChessColor)
 

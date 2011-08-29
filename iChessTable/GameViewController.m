@@ -9,7 +9,11 @@
 #import "GameViewController.h"
 #import "ChessGameController.h"
 #import "ChessTableViewController.h"
+#import "ChessTableView.h"
 #import "Chess.h"
+#import "ChessJudge.h"
+#import "ChessPiece.h"
+#import "ChessPieceView.h"
 
 @implementation GameViewController
 
@@ -43,6 +47,7 @@
 -(void)setupPropertiesWithGameName:(NSString*)name{
     self.game = [ChessGameController gameControllerWithChessBundleName:name];
     self.tableViewController = [ChessTableViewController tableViewControllerWithChessTable:self.game.chess.table];
+    self.tableViewController.game = self.game;
 }
 
 //init a new game view controller by chess game name
@@ -95,5 +100,6 @@
     // Return YES for supported orientations
 	return YES;
 }
+
 
 @end

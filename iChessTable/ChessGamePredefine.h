@@ -9,6 +9,8 @@
 #ifndef iChessTable_ChessGamePredefine_h
 #define iChessTable_ChessGamePredefine_h
 
+#define MAX_LENGTH_OF_TABLE 60
+
 typedef enum {
     ChessGameModeOnePlayer = 1, //Single player
     ChessGameModeTwoPlayers,    //Two players face to face

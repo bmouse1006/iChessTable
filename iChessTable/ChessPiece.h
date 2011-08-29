@@ -11,7 +11,8 @@
 @class MatrixPoint;
 
 typedef enum {
-    ChessBlackColor = 1,
+    ChessNoneColor = 0,
+    ChessBlackColor,
     ChessWhiteColor
 } ChessColor;
 

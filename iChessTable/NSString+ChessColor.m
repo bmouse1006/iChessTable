@@ -19,6 +19,10 @@
             break;
         case ChessWhiteColor:
             colorStr = CHESSWHITECOLOR;
+            break;
+        case ChessNoneColor:
+            colorStr = CHESSNONECOLOR;
+            break;
         default:
             break;
     }

@@ -25,8 +25,6 @@
 
 @end
 
-#define MAX_LENGTH_OF_TABLE 40
-
 @interface ChessMatrix : NSObject{
     //matrix that stores all piece status
     ChessPiece* _matrix[MAX_LENGTH_OF_TABLE][MAX_LENGTH_OF_TABLE];

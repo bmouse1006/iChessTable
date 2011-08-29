@@ -60,16 +60,16 @@
         switch (single.type) {
             case ChessSingleStepTypeAdd:
                 [self addPiece:single.piece 
-                            at:single.pointTo];
+                            at:single.to];
                 break;
             case ChessSingleStepTypeMove:
                 [self movePiece:single.piece
-                           from:single.pointFrom
-                             to:single.pointTo];
+                           from:single.from
+                             to:single.to];
                 break;
             case ChessSingleStepTypeDelete:
                 [self removePiece:single.piece
-                               at:single.pointTo];
+                               at:single.to];
             default:
                 break;
         }

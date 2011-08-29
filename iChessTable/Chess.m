@@ -15,6 +15,7 @@
 @implementation Chess
 
 @synthesize name = _name;
+@synthesize move = _move;
 @synthesize table = _table;
 @synthesize pieces = _pieces;
 @synthesize rules = _rules;
@@ -34,7 +35,7 @@
     @try {
         newChess = [[[Chess alloc] init] autorelease];
         newChess.name = [plist valueForKey:@"name"];
-        
+        newChess.move = [(NSNumber*)[plist valueForKey:@"move"] boolValue];
         //change it from dictionary to mutable dictionary
         newChess.pieces = [NSMutableDictionary dictionaryWithDictionary:0];
         NSDictionary* tempPieces = [plist valueForKey:@"pieces"];
@@ -72,6 +73,15 @@
     //generate a new instance of piece and return
     return [ChessPiece chessPieceWithProperyList:[self.pieceModel valueForKey:kind]
                                         andColor:color];
+}
+
+-(ChessPiece*)getDefaultPieceByColoy:(ChessColor)color{
+    return [self getPieceByKind:[self defaultPieceKind]
+                          color:color];
+}
+
+-(NSString*)defaultPieceKind{
+    return [self.pieces objectForKey:@"defaultPieceKind"];
 }
 
 //init and dealloc

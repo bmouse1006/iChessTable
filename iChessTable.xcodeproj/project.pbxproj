@@ -60,6 +60,7 @@
 /* Begin PBXFileReference section */
 		2204934014034FF3007CB4AB /* ChessTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessTableView.h; sourceTree = "<group>"; };
 		2204934114034FF3007CB4AB /* ChessTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessTableView.m; sourceTree = "<group>"; };
+		220493481404AB4C007CB4AB /* ChessViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessViewControllerDelegate.h; sourceTree = "<group>"; };
 		22291E1B13F51C7B00D9F91D /* iChessTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChessTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22291E1F13F51C7B00D9F91D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22291E2113F51C7B00D9F91D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -266,11 +267,12 @@
 				224B6F7814024FFC0042FDC3 /* GameViewController.h */,
 				224B6F7914024FFC0042FDC3 /* GameViewController.m */,
 				224B6F7A14024FFC0042FDC3 /* GameViewController.xib */,
-				224B6F81140250A00042FDC3 /* PlayerControlPanelView.h */,
-				224B6F82140250A00042FDC3 /* PlayerControlPanelView.m */,
 				224B6F85140294C60042FDC3 /* ChessTableViewController.h */,
 				224B6F86140294C60042FDC3 /* ChessTableViewController.m */,
+				224B6F81140250A00042FDC3 /* PlayerControlPanelView.h */,
+				224B6F82140250A00042FDC3 /* PlayerControlPanelView.m */,
 				224B6F87140294C70042FDC3 /* ChessTableViewController.xib */,
+				220493481404AB4C007CB4AB /* ChessViewControllerDelegate.h */,
 			);
 			name = "View+Controller";
 			sourceTree = "<group>";

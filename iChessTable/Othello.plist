@@ -21,6 +21,8 @@
 	<string>OthelloRules</string>
 	<key>pieces</key>
 	<dict>
+		<key>defaultPieceKind</key>
+		<string>roundPiece</string>
 		<key>chessWhiteColor</key>
 		<dict>
 			<key>roundPiece</key>
@@ -42,5 +44,7 @@
 			<string>round</string>
 		</dict>
 	</dict>
+	<key>move</key>
+	<false/>
 </dict>
 </plist>

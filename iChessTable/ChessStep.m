@@ -13,13 +13,13 @@
 
 @synthesize type = _type;
 @synthesize piece = _piece;
-@synthesize pointFrom = _pointFrom;
-@synthesize pointTo = _pointTo;
+@synthesize from = _from;
+@synthesize to = _to;
 
 -(ChessSingleStep*)reverse{
     ChessSingleStep* reversed = [[ChessSingleStep alloc] init];
     reversed.piece = self.piece;
-    reversed.pointTo = self.pointTo;
+    reversed.to = self.to;
     switch (self.type) {
         case ChessSingleStepTypeAdd:
             reversed.type = ChessSingleStepTypeDelete;
@@ -29,8 +29,8 @@
             break;
         case ChessSingleStepTypeMove:
             reversed.type = ChessSingleStepTypeMove;
-            reversed.pointFrom = self.pointTo;
-            reversed.pointTo = self.pointFrom;
+            reversed.from = self.to;
+            reversed.to = self.from;
         default:
             break;
     }
@@ -40,8 +40,8 @@
 
 -(void)dealloc{
     self.piece = nil;
-    self.pointFrom = nil;
-    self.pointTo = nil;
+    self.from = nil;
+    self.to = nil;
     [super dealloc];
 }
 
@@ -67,7 +67,7 @@
     ChessSingleStep* step = [[ChessSingleStep alloc] init];
     step.type = ChessSingleStepTypeAdd;
     step.piece = piece;
-    step.pointFrom = location; 
+    step.from = location; 
     [self.singleSteps addObject:step];
     [step release];
 }
@@ -76,7 +76,7 @@
     ChessSingleStep* step = [[ChessSingleStep alloc] init];
     step.type = ChessSingleStepTypeDelete;
     step.piece = piece;
-    step.pointFrom = location; 
+    step.from = location; 
     [self.singleSteps addObject:step];
     [step release];
 }
@@ -85,8 +85,8 @@
     ChessSingleStep* step = [[ChessSingleStep alloc] init];
     step.type = ChessSingleStepTypeMove;
     step.piece = piece;
-    step.pointFrom = fromLocation; 
-    step.pointTo = toLocation;
+    step.from = fromLocation; 
+    step.to = toLocation;
     [self.singleSteps addObject:step];
     [step release];
 }

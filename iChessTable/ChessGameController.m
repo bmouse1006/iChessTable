@@ -8,6 +8,7 @@
 
 #import "ChessGameController.h"
 #import "Chess.h"
+#import "ChessTable.h"
 #import "ChessJudge.h"
 #import "ChessPlayer.h"
 
@@ -36,33 +37,54 @@
 -(void)notificationPieceSelect:(NSNotification*)notification{
     DebugLog(@"NOTIFICATION_PLAYER_PIECE_SELECT is received", nil);
     //get a notification from view controller that player has selected a piece
-    //call judge to check if selecting is legal
-    //post the result
-    //if it's legal
+    //All select is legal if this method is invoked, according to current logic
+//    ChessPiece* piece = [notification.userInfo objectForKey:@"piece"];
+//    MatrixPoint* from = [notification.userInfo objectForKey:@"from"];
+//    MatrixPoint* to = [notification.userInfo objectForKey:@"to"];
     //update matrix
-    //if it's illegal
     
 }
 //NOTIFICATION_PLAYER_PIECE_DROP
 -(void)notificationPieceDrop:(NSNotification*)notification{
     DebugLog(@"NOTIFICATION_PLAYER_PIECE_DROP is received", nil);
     //get a notification from view controller that player has just dropped a piece -- directly or end of dragging
-    //call judge to check if dropping is legal
-    //post the result
-    //if it's legal
-    //update matrix
-    //if it's illegal
-    
+//    ChessPiece* piece = [notification.userInfo objectForKey:@"piece"]; it's nil in drop event
+//    MatrixPoint* from = [notification.userInfo objectForKey:@"from"]; it's nil in drop evetn
+    MatrixPoint* to = [notification.userInfo objectForKey:@"to"];
+    //drop a default kind of piece
+    ChessPiece* piece = [self.chess getDefaultPieceByColoy:self.judge.currentPlayer]; 
+    //get all steps
+    ChessStep* step = [self.judge stepForDropping:piece to:to inTable:self.chess.table];
+    //perform the steps
+    [self.chess.table performStep:step saveStep:YES];
+    //get the winner
+    ChessColor winner = [self.judge winnerInTable:self.chess.table];
+    if (winner != ChessNoneColor){//if someone is winner
+        //send a notification to game view controller
+        //to tell that someone is the winner
+//        [self postNotificationWithName:xxxxx];
+    }else{
+        //if no one is winner
+        [self.judge switchPlayer];
+        switch (self.mode) {
+            case ChessGameModeOnePlayer:
+                break;
+            case ChessGameModeTwoPlayers:
+                break;
+            case ChessGameModeBlueTooth:
+                break;
+            case ChessGameModeGameCenter:
+                break;
+            default:
+                break;
+        }
+        //
+    }
 }
 //NOTIFICATION_PLAYER_PIECE_MOVE
 -(void)notificationPieceMove:(NSNotification*)notification{
     DebugLog(@"NOTIFICATION_PLAYER_PIECE_MOVE is received", nil);
     //get a notification from view controller that player is moving a piece now
-    //call judge to check if moving is legal
-    //post the result
-    //if it's legal
-    //update matrix
-    //if it's illegal
 }
 //NOTIFICATION_REPLAY_START
 -(void)notificationReplayStart:(NSNotification*)notification{
