@@ -24,7 +24,7 @@
     //generate a new game controller
     ChessGameController* gameController = [[ChessGameController alloc] init];
     //generate a chess instance with bundle name
-    gameController.chess = [Chess chessWithBundleFile:name];
+    gameController.chess = [Chess chessWithBundleName:name];
     //set rule to judge
     gameController.judge = [ChessJudge judgeWithRules:gameController.chess.rules];
     

@@ -42,9 +42,22 @@
 		224B6F83140250A10042FDC3 /* PlayerControlPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 224B6F82140250A00042FDC3 /* PlayerControlPanelView.m */; };
 		224B6F88140294C70042FDC3 /* ChessTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224B6F86140294C60042FDC3 /* ChessTableViewController.m */; };
 		224B6F89140294C70042FDC3 /* ChessTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224B6F87140294C70042FDC3 /* ChessTableViewController.xib */; };
+		227AA537140CC9D2001577DA /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227AA535140CC9D2001577DA /* HistoryViewController.m */; };
+		227AA538140CC9D2001577DA /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227AA536140CC9D2001577DA /* HistoryViewController.xib */; };
+		227AA53C140CCA8C001577DA /* GameStandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227AA53A140CCA8C001577DA /* GameStandViewController.m */; };
+		227AA53D140CCA8C001577DA /* GameStandViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227AA53B140CCA8C001577DA /* GameStandViewController.xib */; };
+		227AA550140CCDA2001577DA /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227AA54E140CCDA0001577DA /* HistoryTableViewController.m */; };
+		227AA551140CCDA2001577DA /* HistoryTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227AA54F140CCDA1001577DA /* HistoryTableViewController.xib */; };
+		227AA555140CCDB5001577DA /* StandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227AA553140CCDB3001577DA /* StandTableViewController.m */; };
+		227AA556140CCDB5001577DA /* StandTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227AA554140CCDB4001577DA /* StandTableViewController.xib */; };
+		227AA558140CF3A1001577DA /* ChessList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 227AA557140CF3A0001577DA /* ChessList.plist */; };
+		227AA55D140CFA4B001577DA /* StandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 227AA55C140CFA3D001577DA /* StandTableViewCell.m */; };
+		227AA55F140D17ED001577DA /* StandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227AA55E140D17EA001577DA /* StandTableViewCell.xib */; };
 		2282D96413F539BE008CA309 /* Othello.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2282D96313F539BE008CA309 /* Othello.plist */; };
 		2282D96A13F53EF1008CA309 /* ChessTemplate.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2282D96913F53EF0008CA309 /* ChessTemplate.plist */; };
 		2282D96F13F56FE3008CA309 /* OthelloRules.m in Sources */ = {isa = PBXBuildFile; fileRef = 2282D96E13F56FE3008CA309 /* OthelloRules.m */; };
+		22AE8EC9140D1E23005BE331 /* StandGameIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE8EC8140D1E23005BE331 /* StandGameIcon.m */; };
+		22AE8ECC140D1E39005BE331 /* StandGameIcon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22AE8ECB140D1E39005BE331 /* StandGameIcon.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,10 +130,29 @@
 		224B6F85140294C60042FDC3 /* ChessTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessTableViewController.h; sourceTree = "<group>"; };
 		224B6F86140294C60042FDC3 /* ChessTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessTableViewController.m; sourceTree = "<group>"; };
 		224B6F87140294C70042FDC3 /* ChessTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChessTableViewController.xib; sourceTree = "<group>"; };
+		227AA534140CC9D2001577DA /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		227AA535140CC9D2001577DA /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		227AA536140CC9D2001577DA /* HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		227AA539140CCA8C001577DA /* GameStandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStandViewController.h; sourceTree = "<group>"; };
+		227AA53A140CCA8C001577DA /* GameStandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStandViewController.m; sourceTree = "<group>"; };
+		227AA53B140CCA8C001577DA /* GameStandViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameStandViewController.xib; sourceTree = "<group>"; };
+		227AA54D140CCD9F001577DA /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
+		227AA54E140CCDA0001577DA /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
+		227AA54F140CCDA1001577DA /* HistoryTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryTableViewController.xib; sourceTree = "<group>"; };
+		227AA552140CCDB3001577DA /* StandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandTableViewController.h; sourceTree = "<group>"; };
+		227AA553140CCDB3001577DA /* StandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandTableViewController.m; sourceTree = "<group>"; };
+		227AA554140CCDB4001577DA /* StandTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StandTableViewController.xib; sourceTree = "<group>"; };
+		227AA557140CF3A0001577DA /* ChessList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChessList.plist; sourceTree = "<group>"; };
+		227AA55B140CFA3B001577DA /* StandTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandTableViewCell.h; sourceTree = "<group>"; };
+		227AA55C140CFA3D001577DA /* StandTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandTableViewCell.m; sourceTree = "<group>"; };
+		227AA55E140D17EA001577DA /* StandTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StandTableViewCell.xib; sourceTree = "<group>"; };
 		2282D96313F539BE008CA309 /* Othello.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Othello.plist; sourceTree = "<group>"; };
 		2282D96913F53EF0008CA309 /* ChessTemplate.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChessTemplate.plist; sourceTree = "<group>"; };
 		2282D96D13F56FE3008CA309 /* OthelloRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthelloRules.h; sourceTree = "<group>"; };
 		2282D96E13F56FE3008CA309 /* OthelloRules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthelloRules.m; sourceTree = "<group>"; };
+		22AE8EC7140D1E23005BE331 /* StandGameIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandGameIcon.h; sourceTree = "<group>"; };
+		22AE8EC8140D1E23005BE331 /* StandGameIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandGameIcon.m; sourceTree = "<group>"; };
+		22AE8ECB140D1E39005BE331 /* StandGameIcon.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StandGameIcon.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,9 +219,6 @@
 				22291E2E13F51C7B00D9F91D /* iChessTableAppDelegate.h */,
 				22291E2F13F51C7B00D9F91D /* iChessTableAppDelegate.m */,
 				22291E3113F51C7B00D9F91D /* MainWindow.xib */,
-				22291E3413F51C7B00D9F91D /* iChessTableViewController.h */,
-				22291E3513F51C7B00D9F91D /* iChessTableViewController.m */,
-				22291E3713F51C7B00D9F91D /* iChessTableViewController.xib */,
 				22291E2613F51C7B00D9F91D /* Supporting Files */,
 			);
 			path = iChessTable;
@@ -257,6 +286,7 @@
 		2247504313FE573B0043E1F4 /* View+Controller */ = {
 			isa = PBXGroup;
 			children = (
+				227AA533140CC91A001577DA /* Mainscreen */,
 				2247504713FE57750043E1F4 /* ChessViewController.h */,
 				2247504813FE57750043E1F4 /* ChessViewController.m */,
 				2247504913FE57750043E1F4 /* ChessViewController.xib */,
@@ -286,11 +316,40 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		227AA533140CC91A001577DA /* Mainscreen */ = {
+			isa = PBXGroup;
+			children = (
+				22291E3413F51C7B00D9F91D /* iChessTableViewController.h */,
+				22291E3513F51C7B00D9F91D /* iChessTableViewController.m */,
+				22291E3713F51C7B00D9F91D /* iChessTableViewController.xib */,
+				227AA534140CC9D2001577DA /* HistoryViewController.h */,
+				227AA535140CC9D2001577DA /* HistoryViewController.m */,
+				227AA536140CC9D2001577DA /* HistoryViewController.xib */,
+				227AA539140CCA8C001577DA /* GameStandViewController.h */,
+				227AA53A140CCA8C001577DA /* GameStandViewController.m */,
+				227AA53B140CCA8C001577DA /* GameStandViewController.xib */,
+				227AA54D140CCD9F001577DA /* HistoryTableViewController.h */,
+				227AA54E140CCDA0001577DA /* HistoryTableViewController.m */,
+				227AA54F140CCDA1001577DA /* HistoryTableViewController.xib */,
+				227AA552140CCDB3001577DA /* StandTableViewController.h */,
+				227AA553140CCDB3001577DA /* StandTableViewController.m */,
+				227AA554140CCDB4001577DA /* StandTableViewController.xib */,
+				227AA55B140CFA3B001577DA /* StandTableViewCell.h */,
+				227AA55C140CFA3D001577DA /* StandTableViewCell.m */,
+				227AA55E140D17EA001577DA /* StandTableViewCell.xib */,
+				22AE8EC7140D1E23005BE331 /* StandGameIcon.h */,
+				22AE8EC8140D1E23005BE331 /* StandGameIcon.m */,
+				22AE8ECB140D1E39005BE331 /* StandGameIcon.xib */,
+			);
+			name = Mainscreen;
+			sourceTree = "<group>";
+		};
 		2282D95F13F5387A008CA309 /* ChessBundle */ = {
 			isa = PBXGroup;
 			children = (
 				2282D96B13F56F25008CA309 /* Othello */,
 				2282D96913F53EF0008CA309 /* ChessTemplate.plist */,
+				227AA557140CF3A0001577DA /* ChessList.plist */,
 			);
 			name = ChessBundle;
 			sourceTree = "<group>";
@@ -388,6 +447,13 @@
 				2247504B13FE57750043E1F4 /* ChessViewController.xib in Resources */,
 				224B6F7C14024FFD0042FDC3 /* GameViewController.xib in Resources */,
 				224B6F89140294C70042FDC3 /* ChessTableViewController.xib in Resources */,
+				227AA538140CC9D2001577DA /* HistoryViewController.xib in Resources */,
+				227AA53D140CCA8C001577DA /* GameStandViewController.xib in Resources */,
+				227AA551140CCDA2001577DA /* HistoryTableViewController.xib in Resources */,
+				227AA556140CCDB5001577DA /* StandTableViewController.xib in Resources */,
+				227AA558140CF3A1001577DA /* ChessList.plist in Resources */,
+				227AA55F140D17ED001577DA /* StandTableViewCell.xib in Resources */,
+				22AE8ECC140D1E39005BE331 /* StandGameIcon.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +509,12 @@
 				224B6F83140250A10042FDC3 /* PlayerControlPanelView.m in Sources */,
 				224B6F88140294C70042FDC3 /* ChessTableViewController.m in Sources */,
 				2204934214034FF3007CB4AB /* ChessTableView.m in Sources */,
+				227AA537140CC9D2001577DA /* HistoryViewController.m in Sources */,
+				227AA53C140CCA8C001577DA /* GameStandViewController.m in Sources */,
+				227AA550140CCDA2001577DA /* HistoryTableViewController.m in Sources */,
+				227AA555140CCDB5001577DA /* StandTableViewController.m in Sources */,
+				227AA55D140CFA4B001577DA /* StandTableViewCell.m in Sources */,
+				22AE8EC9140D1E23005BE331 /* StandGameIcon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,7 +30,7 @@
 @property (retain, nonatomic) id<ChessRules> rules;
 @property (nonatomic, retain) NSDictionary* pieceModel;
 
-+(Chess*)chessWithBundleFile:(NSString*)filePath;
++(Chess*)chessWithBundleName:(NSString*)name;
 +(Chess*)chessWithPropertyList:(NSDictionary*)plist;
 
 //get an instance of piece by kind and color, in the piece pool

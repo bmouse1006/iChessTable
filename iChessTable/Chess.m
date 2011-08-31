@@ -22,7 +22,9 @@
 @synthesize pieceModel = _pieceModel;
 
 #pragma class method
-+(Chess*)chessWithBundleFile:(NSString*)filePath{
++(Chess*)chessWithBundleName:(NSString*)name{
+    
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:name ofType:@"plist"];
     
     NSDictionary* bundle = [NSDictionary dictionaryWithContentsOfFile:filePath];
     
