@@ -25,6 +25,7 @@
     //it will be empty as soon as any step performed by player
     NSMutableArray* _redoSteps;
     //View controller for chess table and all pieces
+    ChessPiece* _movedInThisRound;
 }
 
 @property (nonatomic, retain, getter = getBkImageName) NSString* bkImageName;
@@ -33,6 +34,7 @@
 @property (nonatomic, retain) ChessMatrix* matrix;
 @property (nonatomic, retain) NSMutableArray* historySteps;
 @property (nonatomic, retain) NSMutableArray* redoSteps;
+@property (nonatomic, retain) ChessPiece* movedInThisRound;
 
 //get a new chess table from property list
 +(ChessTable*)chessTableWithPropertyList:(NSDictionary*)list;

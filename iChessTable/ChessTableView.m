@@ -40,6 +40,8 @@
         self.tableRect = CGRectMake((imageSize.width - self.table.width)/2, (imageSize.height - self.table.height)/2, self.table.width, self.table.height);
         self.gridNodeWidth = self.table.width/self.table.matrix.horiNodes;
         self.gridNodeHeight = self.table.height/self.table.matrix.vertNodes;
+        self.multipleTouchEnabled = NO;
+        self.userInteractionEnabled = YES;
     }
     
     return self;
@@ -71,6 +73,7 @@
 //touches began
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     //drop event happended while touch begins
+    DebugLog(@"touche began - chess table", nil);
     NSEnumerator* enumerator = [touches objectEnumerator];
     UITouch* touch = nil;
     while (touch = [enumerator nextObject]){

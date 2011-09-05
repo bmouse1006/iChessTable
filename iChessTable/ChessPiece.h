@@ -11,26 +11,26 @@
 @class MatrixPoint;
 
 typedef enum {
-    ChessNoneColor = 0,
     ChessBlackColor,
-    ChessWhiteColor
-} ChessColor;
+    ChessWhiteColor,
+    ChessMaxColor
+} ChessPieceColor;
 
 @interface ChessPiece : NSObject{
     NSString* _name;
     NSString* _chessName;
     MatrixPoint* _origin;
-    ChessColor _color;
+    ChessPieceColor _color;
 }
 
 @property (nonatomic, retain) NSString* name;
 @property (nonatomic, retain) NSString* chessName;
-@property (nonatomic, assign) ChessColor color;
+@property (nonatomic, assign) ChessPieceColor color;
 @property (nonatomic, retain) MatrixPoint* origin;
 @property (nonatomic, readonly, getter = getImageName) NSString* imageName;//combined by chessname+name+color
 
 //generate a new chess by given property list
 //returns nil if any exception happens
-+(ChessPiece*)chessPieceWithProperyList:(NSDictionary*)plist andColor:(ChessColor)color; 
++(ChessPiece*)chessPieceWithProperyList:(NSDictionary*)plist andColor:(ChessPieceColor)color; 
 
 @end

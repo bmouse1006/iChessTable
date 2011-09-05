@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChessPiece.h"
 
 @class ChessTableViewController, ChessPieceView, PlayerControlPanelView, ChessGameController;
 
@@ -19,12 +20,19 @@
 @property (nonatomic, retain) ChessTableViewController* tableViewController;
 //panel view here
 
--(id)initWithChessGameName:(NSString*)name;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil gameName:(NSString*)name;
--(void)setupPropertiesWithGameName:(NSString*)name;
+-(id)initWithChessGameName:(NSString*)name mode:(ChessGameMode)mode choosenColor:(ChessPieceColor)color;
+- (id)initWithNibName:(NSString *)nibNameOrNil
+               bundle:(NSBundle *)nibBundleOrNil 
+             gameName:(NSString*)name 
+                 mode:(ChessGameMode)mode 
+         choosenColor:(ChessPieceColor)color;
 
 -(void)composeSubViews;
 -(void)composePlayerControlPanelViews;
 -(void)composeChessTableViews;//table and pieces are all included
+
+//register and unregister all notifications
+-(void)registerNotifications;
+-(void)unregisterNotifications;
 
 @end

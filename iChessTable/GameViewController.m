@@ -44,23 +44,25 @@
     [self.view addSubview:view];
 }
 
--(void)setupPropertiesWithGameName:(NSString*)name{
-    self.game = [ChessGameController gameControllerWithChessBundleName:name];
-    self.tableViewController = [ChessTableViewController tableViewControllerWithChessTable:self.game.chess.table];
-    self.tableViewController.game = self.game;
-}
-
 //init a new game view controller by chess game name
--(id)initWithChessGameName:(NSString*)name{
-    return [self initWithNibName:nil bundle:nil gameName:name];
+-(id)initWithChessGameName:(NSString*)name mode:(ChessGameMode)mode choosenColor:(ChessPieceColor)color{
+    return [self initWithNibName:nil bundle:nil gameName:name mode:mode choosenColor:color];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil gameName:(NSString*)name
+- (id)initWithNibName:(NSString *)nibNameOrNil
+               bundle:(NSBundle *)nibBundleOrNil 
+             gameName:(NSString*)name 
+                 mode:(ChessGameMode)mode 
+         choosenColor:(ChessPieceColor)color
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        [self setupPropertiesWithGameName:name];
+        self.game = [ChessGameController gameControllerWithChessBundleName:name 
+                                                                      mode:mode
+                                                              choosenColor:color];
+        self.tableViewController = [ChessTableViewController tableViewControllerWithChessTable:self.game.chess.table];
+        self.tableViewController.game = self.game;
     }
     return self;
 }
@@ -86,6 +88,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self composeSubViews];
+    [self.game start];
 }
 
 - (void)viewDidUnload
@@ -101,5 +104,22 @@
 	return YES;
 }
 
+#pragma mark - notification selectors
+-(void)notificationSwitchPlayer:(NSNotification*)notification{
+    //player is switched
+    //do needed change for player control panels
+    //add code here
+}
+
+-(void)registerNotifications{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(notificationSwitchPlayer:)
+                                                 name:NOTIFICATION_GAME_SWITCHPLAYER 
+                                               object:nil];
+}
+
+-(void)unregisterNotifications{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 @end

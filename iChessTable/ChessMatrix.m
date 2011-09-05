@@ -40,8 +40,11 @@
     if ([self isLocationInTheMatrix:fromPoint] &&
         [self isLocationInTheMatrix:toPoint]){
         piece.origin = toPoint;
-        _matrix[toPoint.x][toPoint.y] = _matrix[fromPoint.x][fromPoint.y];
-        _matrix[fromPoint.x][fromPoint.y] = nil;
+        //move the piece to 'to' point only if from is not equal to
+        if ([toPoint isEqualToPoint:fromPoint] == NO){
+            _matrix[toPoint.x][toPoint.y] = _matrix[fromPoint.x][fromPoint.y];
+            _matrix[fromPoint.x][fromPoint.y] = nil;
+        }
     }
 }
 
@@ -107,6 +110,10 @@
 
 -(BOOL)isOffTable{
     return (self.x == -1 || self.y == -1);
+}
+
+-(BOOL)isEqualToPoint:(MatrixPoint*)point{
+    return ((self.x == point.x) && ( self.y == point.y));
 }
 
 @end

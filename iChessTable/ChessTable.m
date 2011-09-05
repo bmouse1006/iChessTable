@@ -18,6 +18,7 @@
 @synthesize matrix = _matrix;
 @synthesize historySteps = _historySteps;
 @synthesize redoSteps = _redoSteps;
+@synthesize movedInThisRound = _movedInThisRound;
 
 #pragma getter and setter
 -(NSString*)getBkImageName{
@@ -80,6 +81,7 @@
     if (save){
         [self.historySteps addObject:step];
     }
+    //after 
 }
 
 -(void)movePiece:(ChessPiece*)piece from:(MatrixPoint*)from to:(MatrixPoint*)to{
@@ -129,6 +131,7 @@
     self.matrix = nil;
     self.historySteps = nil;
     self.redoSteps = nil;
+    self.movedInThisRound = nil;
     [super dealloc];
 }
 

@@ -11,6 +11,7 @@
 #import "ChessTable.h"
 #import "ChessMatrix.h"
 #import "ChessPiece.h"
+#import "ChessStep.h"
 
 #define OTHELLO_ROUND_PIECE @"roundPiece"
 
@@ -23,36 +24,30 @@
     //8,7 black
     //7,8 black
     //8,8 white
-    MatrixPoint* point = [[MatrixPoint alloc] init];
-    point.x = 7;
-    point.y = 7;
-    [chess.table.matrix addPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
-                                                 color:ChessWhiteColor]
-                              to:[MatrixPoint pointWithX:7 andY:7]];
-    point.x = 7;
-    point.y = 8;
-    [chess.table.matrix addPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
-                                                 color:ChessBlackColor]
-                              to:point];
-    point.x = 8;
-    point.y = 7;
-    [chess.table.matrix addPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
-                                                 color:ChessBlackColor]
-                              to:point];
-    point.x = 8;
-    point.y = 8;
-    [chess.table.matrix addPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
-                                                 color:ChessWhiteColor]
-                              to:point];
-    [point release];
+    ChessStep* step = [[ChessStep alloc] init];
+    [step addPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
+                                   color:ChessWhiteColor]
+                at:[MatrixPoint pointWithX:3 andY:3]];
+    [step addPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
+                                   color:ChessBlackColor]
+                at:[MatrixPoint pointWithX:4 andY:3]];
+    [step addPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
+                                   color:ChessBlackColor]
+                at:[MatrixPoint pointWithX:3 andY:4]];
+    [step addPiece:[chess getPieceByKind:OTHELLO_ROUND_PIECE 
+                                   color:ChessWhiteColor]
+                at:[MatrixPoint pointWithX:4 andY:4]];
+    
+    [chess.table performStep:step saveStep:NO];
+    [step release];
     
 }
 
 -(BOOL)pieceMovingAllowed{
-    return NO;
+    return YES;
 }
 
--(ChessColor)firstPlayColor{
+-(ChessPieceColor)firstPlayColor{
     return ChessWhiteColor;
 }
 
@@ -69,19 +64,28 @@
 }
 //generate a step for dropping in the table. This instance of step will be passed to table to move/add/delete piece
 -(ChessStep*)generateStepForDropping:(ChessPiece*)piece to:(MatrixPoint*)to inTable:(ChessTable*)table{
-    return nil;
+    ChessStep* step = [[[ChessStep alloc] init] autorelease];
+    [step addPiece:piece at:to];
+    return step;
 }
 -(ChessStep*)generateStepForMovingFrom:(MatrixPoint*)from to:(MatrixPoint*)to table:(ChessTable*)table{
-    return nil;
+    ChessStep* step = [[[ChessStep alloc] init] autorelease];
+    ChessPiece* piece = [table.matrix pieceAtLocation:from];
+    [step movePiece:piece from:from to:to];
+    return step;
 }
 //check if the player is winner
--(ChessColor)winnerInTable:(ChessTable*)table{
+-(ChessPieceColor)winnerInTable:(ChessTable*)table{
     //add more code later
-    return ChessNoneColor;
+    return ChessMaxColor;
 }
 
--(ChessColor)firstHandPlayer{
-    return ChessNoneColor;
+-(ChessPieceColor)firstHandPlayer{
+    return ChessMaxColor;
+}
+
+-(BOOL)hasMoreStepsForPiece:(ChessPiece*)piece table:(ChessTable*)table{
+    return NO;
 }
 
 @end

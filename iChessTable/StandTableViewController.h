@@ -14,6 +14,7 @@
     UITableView* _tableView;
     
     NSDictionary* _chessList;
+    NSArray* _chessListKeys;
     
     StandTableViewCell* _tempCell;
     StandGameIcon* _tempIcon;
@@ -21,7 +22,7 @@
 
 @property (nonatomic, retain) IBOutlet UITableView* tableView;
 //this list is read from ChessList.plist
-@property (nonatomic, retain, getter = getChessList) NSDictionary* chessList;
+@property (nonatomic, retain, getter = getChessList, setter = setChessList:) NSDictionary* chessList;
 @property (nonatomic, retain) IBOutlet StandTableViewCell* tempCell;
 @property (nonatomic, retain) IBOutlet StandGameIcon* tempIcon;
 

@@ -8,23 +8,30 @@
 
 #import <UIKit/UIKit.h>
 #import "ChessViewControllerDelegate.h"
+#import "MultiTouchImageView.h"
 
 @class ChessPiece;
 
-@interface ChessPieceView : UIImageView{
+@interface ChessPieceView : MultiTouchImageView{
     ChessPiece* _piece;
     id<ChessViewControllerDelegate> _delegate;
     
     BOOL _isMoving;
+    BOOL _selected;
 }
 
 @property (nonatomic, retain) ChessPiece* piece;
 @property (nonatomic, assign) id<ChessViewControllerDelegate> delegate;
 @property (nonatomic, assign) BOOL isMoving;
+@property (nonatomic, assign, setter = setSelected:) BOOL selected;
 
 -(id)initWithChessPiece:(ChessPiece*)piece;
 
--(void)moveByDeltaPoint:(CGPoint)delta;
 -(void)moveTo:(CGPoint)to;
+-(void)moveBack;
+//fix location of the view
+-(void)fix;
+
+-(BOOL)touchesInScope:(NSSet*)touches;
 
 @end

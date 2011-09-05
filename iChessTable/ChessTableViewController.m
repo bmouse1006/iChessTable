@@ -50,7 +50,7 @@
 
 #pragma instance methods
 -(CGPoint)centerPointForPiece:(ChessPiece*)piece{
-    CGPoint central = CGPointMake(piece.origin.x * self.tableView.gridNodeWidth, piece.origin.y * self.tableView.gridNodeHeight);
+    CGPoint central = CGPointMake((piece.origin.x+0.5) * self.tableView.gridNodeWidth, (piece.origin.y + 0.5) * self.tableView.gridNodeHeight);
     CGPoint origin = self.tableView.tableRect.origin;
     return CGPointMake(origin.x + central.x, origin.y + central.y);
 }
@@ -86,6 +86,7 @@
 #pragma mark - View lifecycle
 
 -(void)loadView{
+    [super loadView];
     //init table view;
     ChessTableView* tempView = [[ChessTableView alloc] initWithChessTable:self.table];
     tempView.delegate = self;
@@ -129,7 +130,7 @@
     //add this piece view to view matrix
     _pieceViewMatrix[at.x][at.y] = pieceView;
     //set center point for the piece view, according to given piece
-    [pieceView setCenter:[self centerPointForPiece:piece]];
+    pieceView.center = [self centerPointForPiece:piece];
     pieceView.alpha = 0;
     [self.tableView addSubview:pieceView];
     //animation using block
@@ -156,14 +157,8 @@
     pieceView.piece = piece;
     piece.origin = to;
     _pieceViewMatrix[to.x][to.y] = pieceView;
-    CGPoint center = [self centerPointForPiece:piece];
-    [pieceView moveTo:center];
+    [pieceView moveTo:[self centerPointForPiece:piece]];
     //it's already in the table view so we don't need to add it again
-//    [UIView animateWithDuration:0.2 
-//                          delay:0 
-//                        options:UIViewAnimationOptionCurveEaseIn
-//                     animations:^{[pieceView setCenter:center];} 
-//                     completion:NULL];
 }
 
 -(void)registerNotifications:(id)object{
@@ -171,6 +166,7 @@
     //NOTIFICATION_TABLE_UPDATE_BEGIN     @"NOTIFICATION_TABLE_UPDATE_BEGIN"
     //NOTIFICATION_TABLE_UPDATE_STEP      @"NOTIFICATION_TABLE_UPDATE_STEP"
     //NOTIFICATION_TABLE_UPDATE_END       @"NOTIFICATION_TABLE_UPDATE_END"
+    //NOTIFICATION_GAME_SWITCHPLAYER      @"NOTIFICATION_GAME_SWITCHPLAYER"
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(notificationTableUpdateBegin:)
                                                  name:NOTIFICATION_TABLE_UPDATE_BEGIN
@@ -183,13 +179,15 @@
                                              selector:@selector(notificationTableUpdateEnd:)
                                                  name:NOTIFICATION_TABLE_UPDATE_END
                                                object:object];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(notificationSwitchPlayer:)
+                                                 name:NOTIFICATION_GAME_SWITCHPLAYER
+                                               object:nil];
     
 }
 
 -(void)unregisterNotifications:(id)object{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICATION_TABLE_UPDATE_BEGIN object:object];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICATION_TABLE_UPDATE_STEP object:object];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICATION_TABLE_UPDATE_END object:object];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 //all notification selectors
@@ -216,53 +214,74 @@
     }
 }
 
+//NOTIFICATION_TABLE_UPDATE_END
 -(void)notificationTableUpdateEnd:(NSNotification*)notification{
     DebugLog(@"NOTIFICATION_TABLE_UPDATE_END is received", nil);
     //commit animation context
 }
 
+//NOTIFICATION_SWITCH_PLAYER
+-(void)notificationSwitchPlayer:(NSNotification*)notification{
+    DebugLog(@"NOTIFICATION_GAME_SWITCHPLAYER is received", nil);
+    //player is switched
+    //set selected piece view as nil
+    self.selectedPieceView = nil;
+    //add more action if needed
+}
+
 #pragma delegate methods
 //event from piece view
 -(void)pieceViewIsSelected:(ChessPieceView*)pieceView{
+    if (self.selectedPieceView == nil || self.selectedPieceView.piece.color == pieceView.piece.color){
     //if select is allowed
-    if ([self.game.judge doesPieceCanBeSelected:pieceView.piece table:self.table]){
-        if (((self.selectedPieceView != nil)&&(self.selectedPieceView != pieceView)&&self.selectedPieceView.isMoving == NO) || 
-            self.selectedPieceView == nil){
-            self.selectedPieceView = pieceView;
-            //send out notifications to table
-            [self postNotificaiotnWithName:NOTIFICATION_PLAYER_PIECE_SELECT
-                                     piece:pieceView.piece 
-                                      from:nil
-                                        to:nil];
+        if ([self.game.judge doesPieceCanBeSelected:pieceView.piece table:self.table]){
+            if (((self.selectedPieceView != nil)&&(self.selectedPieceView != pieceView)&&self.selectedPieceView.isMoving == NO) || 
+                self.selectedPieceView == nil){
+                self.selectedPieceView = pieceView;
+            }
         }
+    }else{
+        //it means player touched a coponent's piece after selected a his own piece -- wants to take this one
+        //this piece need to be removed from superview
+        //but what if player can't move piece here
+        [self tableView:self.tableView isTouchedAt:pieceView.acturalCenter];
     }
     //do more for the selected piece if needed
     //more animation
 }
 //event from piece view
--(void)pieceViewIsDropped:(ChessPieceView*)pieceView{
-    //if this piece has been moved
-    if (pieceView.isMoving == YES){
-        //check if piece can be moved to the current position
-        if ([self.game.judge doesPieceCanBeDropped:pieceView.piece 
-                                                to:[self.tableView matrixPointFromPixarPoint:pieceView.center]
-                                             table:self.table]){
-            //dropping to current location is legal
-            //send out piece is moved notification to table
-            MatrixPoint* from = pieceView.piece.origin;
-            MatrixPoint* to = [self.tableView matrixPointFromPixarPoint:pieceView.center];
-            [self postNotificaiotnWithName:NOTIFICATION_PLAYER_PIECE_MOVE
-                                     piece:pieceView.piece 
-                                      from:from
-                                        to:to];
-        }else{
-            //dropping to current location is not legal
-            //move back
-            [pieceView moveTo:[self centerPointForPiece:pieceView.piece]];
+-(BOOL)pieceViewIsDropped:(ChessPieceView*)pieceView{
+    //if it's not the selected one then skip all steps, nothing happens
+    BOOL result = YES;
+    if (pieceView == self.selectedPieceView){
+        //if this piece has been moved
+        if (pieceView.isMoving == YES){
+            //check if piece is in the scope and piece can be moved to the current position
+            MatrixPoint* to = [self.tableView matrixPointFromPixarPoint:pieceView.acturalCenter];
+            if (CGRectContainsPoint(self.tableView.tableRect, pieceView.acturalCenter) &&
+                [self.game.judge doesPieceCanBeDropped:pieceView.piece 
+                                                    to:to
+                                                 table:self.table]){
+                //dropping to current location is legal\
+                //send out piece is moved notification to table
+                MatrixPoint* from = pieceView.piece.origin;
+                [self postNotificaiotnWithName:NOTIFICATION_PLAYER_PIECE_MOVE
+                                         piece:pieceView.piece 
+                                          from:from
+                                            to:to];
+            }else{
+                //dropping to current location is not legal
+                //move back
+                [pieceView moveBack];
+            }
+            //set the selected piece view = nil
+            self.selectedPieceView = nil;
         }
-        //set the selected piece view = nil
-        self.selectedPieceView = nil;
+    }else{
+        result = NO;
     }
+    
+    return result;
 }
 //event from piece view
 -(void)pieceViewIsMoving:(ChessPieceView*)pieceView{
@@ -275,17 +294,23 @@
 //event from piece view
 -(BOOL)doesPieceViewCanBeMoved:(ChessPieceView*)pieceView{
     BOOL result = NO;
-    if ([self.game.judge doesPieceCanBeMoved:pieceView.piece table:self.table]){
+    //if the selected view is the incoming view and it can be moved
+    if (pieceView == self.selectedPieceView && [self.game.judge doesPieceCanBeMoved:pieceView.piece table:self.table]){
         result = YES;
     }
     
     return result;
 }
 
-
 //from table view
 -(void)tableView:(ChessTableView*)tableView isTouchedAt:(CGPoint)location{
     
+    //if the location is not in the table rect
+    //set selected as nil and return 
+    if (!CGRectContainsPoint(self.tableView.tableRect, location)){
+        self.selectedPieceView = nil;
+        return;
+    }
     MatrixPoint* from = nil;
     MatrixPoint* to = [tableView matrixPointFromPixarPoint:location];
     
@@ -294,11 +319,20 @@
             //move event
             //add some animation?
             //send out move notification
-            from = self.selectedPieceView.piece.origin;
-            [self postNotificaiotnWithName:NOTIFICATION_PLAYER_PIECE_MOVE
-                                     piece:self.selectedPieceView.piece
-                                      from:from   
-                                        to:to];
+            if (CGRectContainsPoint(self.tableView.tableRect, self.selectedPieceView.acturalCenter) &&
+                [self.game.judge doesPieceCanBeDropped:self.selectedPieceView.piece 
+                                                    to:to
+                                                 table:self.table]){
+                from = self.selectedPieceView.piece.origin;
+                [self postNotificaiotnWithName:NOTIFICATION_PLAYER_PIECE_MOVE
+                                         piece:self.selectedPieceView.piece
+                                          from:from   
+                                            to:to];
+                }else{
+                    //notify that moving is not legal
+                    //add more code here
+                    
+                }
         }
     }else{//piece can't move
         //drop event
@@ -325,6 +359,21 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:name
                                                         object:nil
                                                       userInfo:userInfo];
+}
+
+-(void)setSelectedPieceView:(ChessPieceView *)selectedPieceView{
+    if (_selectedPieceView != selectedPieceView){
+        _selectedPieceView.selected = NO;
+        [_selectedPieceView release];
+        _selectedPieceView = selectedPieceView;
+        [_selectedPieceView retain];
+        _selectedPieceView.selected = YES;
+        //send out notifications to table
+        [self postNotificaiotnWithName:NOTIFICATION_PLAYER_PIECE_SELECT
+                                 piece:_selectedPieceView.piece 
+                                  from:nil
+                                    to:nil];
+    }
 }
 
 @end

@@ -5,7 +5,7 @@
 //  Created by Jin Jin on 11-8-19.
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
-
+#import <QuartzCore/CALayer.h>
 #import "ChessPieceView.h"
 #import "ChessPiece.h"
 
@@ -14,6 +14,7 @@
 @synthesize piece = _piece;
 @synthesize delegate = _delegate;
 @synthesize isMoving = _isMoving;
+@synthesize selected = _selected;
 
 - (id)init
 {
@@ -30,6 +31,10 @@
     if (self){
         self.piece = piece;
         self.multipleTouchEnabled = NO;
+        self.userInteractionEnabled = YES;
+        self.layer.shadowOpacity = 0.6;
+        self.layer.shadowColor = [UIColor blackColor].CGColor;
+        self.selected = NO;
     }
     
     return self;
@@ -41,47 +46,41 @@
 }
 
 -(void)moveTo:(CGPoint)to{
-    CGPoint delta = CGPointMake(to.x-self.center.x, to.y-self.center.y);
-    [self moveByDeltaPoint:delta];
+    DebugLog(@"to.x = %f", to.x);
+    DebugLog(@"to.y = %f", to.y);
+    [self fix];
+    [UIView animateWithDuration:0.2 
+                     animations:^{self.center = to;}];
 }
 
--(void)moveByDeltaPoint:(CGPoint)delta{
-    CGAffineTransform transform = CGAffineTransformTranslate(CGAffineTransformIdentity, delta.x, delta.y);
-    [UIView animateWithDuration:0.2 
-                          delay:0 
-                        options:UIViewAnimationCurveEaseIn
-                     animations:^{[self setTransform:transform];}
-                     completion:NULL];
+-(void)moveBack{
+    [UIView animateWithDuration:0.2 animations:^{self.transform = CGAffineTransformIdentity;}];
+    originalTransform = self.transform;
+}
+
+-(void)fix{
+    self.center = CGPointApplyAffineTransform(self.center, self.transform);
+    self.transform = CGAffineTransformIdentity;
+    originalTransform = self.transform;
 }
 
 //response to touch event
 //touches began
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    DebugLog(@"touch began for piece view", nil);
+    [self.superview bringSubviewToFront:self];
     [self.delegate pieceViewIsSelected:self];
 }
 
 //touches moved
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     //player is moving piece
+//    DebugLog(@"touch moved for piece view", nil);
     if ([self.delegate doesPieceViewCanBeMoved:self]){
         [self.delegate pieceViewIsMoving:self];
         self.isMoving = YES;
-        NSEnumerator* enumerator = [touches objectEnumerator];
-        UITouch* touch = nil;
-        while (touch = [enumerator nextObject]) {
-            //only response to tap count == 1
-            CGPoint previous, current;
-            switch (touch.tapCount) {
-                case 1:
-                    previous = [touch previousLocationInView:self];
-                    current = [touch locationInView:self];
-                    [self moveByDeltaPoint:CGPointMake(current.x-previous.x, current.y-previous.y)];
-                    break;
-                default:
-                    break;
-            }
-        }
-        //
+        [super touchesMoved:touches withEvent:event];
     }
 }
 
@@ -89,14 +88,37 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     //player is end of touching
     //set isMoving = NO
-    self.isMoving = NO;
-    [self.delegate pieceViewIsDropped:self];
+    //if touch is out of scope for current view, do nothing
+    if ([self touchesInScope:touches] == YES){
+        [super touchesEnded:touches withEvent:event];
+        DebugLog(@"touch ended for piece view", nil);
+        [self.delegate pieceViewIsDropped:self];
+        self.isMoving = NO;
+    }
 }
 
 //touches cancelled
 -(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
+    DebugLog(@"touch cancelled for piece view %@", self);
+    [super touchesCancelled:touches withEvent:event];
     self.isMoving = NO;
     [self.delegate pieceViewTouchingIsCancelled:self];
 }
 
+-(BOOL)touchesInScope:(NSSet*)touches{
+    NSArray* touchArray = [touches allObjects];
+    UITouch* touch = [touchArray objectAtIndex:0];
+    return CGRectContainsPoint(self.frame, [touch locationInView:self.superview]);
+}
+
+-(void)setSelected:(BOOL)selected{
+    _selected = selected;
+    if (_selected == YES){
+        //add visual effect
+        self.layer.shadowOffset = CGSizeMake(10, 6);
+    }else{
+        //remove visual effect
+        self.layer.shadowOffset = CGSizeMake(3, 2);
+    }
+}
 @end

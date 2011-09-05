@@ -36,6 +36,11 @@
 -(IBAction)iconIsClicked:(id)sender{
     DebugLog(@"icon is clicked", nil);
     DebugLog(@"Bunlde name is %@", self.chessBundleName);
+    //send a notification to main screen to pop up a game controller view
+    NSDictionary* userInfo = [NSDictionary dictionaryWithObject:self.chessBundleName forKey:@"chessBundleName"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_STARTUP_NEWGAME
+                                                        object:nil
+                                                      userInfo:userInfo];
 }
 
 -(void)setupGameIcon:(NSDictionary*)icon{

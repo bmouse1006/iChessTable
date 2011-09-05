@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class GameStandViewController, HistoryViewController;
+@class GameStandViewController, HistoryViewController, GameViewController;
 
 @interface iChessTableViewController : UIViewController{
     GameStandViewController* _gameStandController;
     HistoryViewController* _historyViewController;
-    
+    GameViewController* _gameViewController;
     UIView* _standContainer;
     UIView* _historyContainer;
 }
@@ -23,5 +23,10 @@
 
 @property (nonatomic, retain) IBOutlet UIView* standContainer;
 @property (nonatomic, retain) IBOutlet UIView* historyContainer;
+
+@property (nonatomic, retain) GameViewController* gameViewController;
+
+-(void)registerNotifications;
+-(void)unregisterNotifications;
 
 @end

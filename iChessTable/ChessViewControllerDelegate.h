@@ -13,7 +13,7 @@
 @protocol ChessViewControllerDelegate <NSObject>
 
 -(void)pieceViewIsSelected:(ChessPieceView*)pieceView;
--(void)pieceViewIsDropped:(ChessPieceView*)pieceView;
+-(BOOL)pieceViewIsDropped:(ChessPieceView*)pieceView;
 -(void)pieceViewIsMoving:(ChessPieceView*)pieceView;
 -(void)pieceViewTouchingIsCancelled:(ChessPieceView*)pieceView;
 -(BOOL)doesPieceViewCanBeMoved:(ChessPieceView*)pieceView;

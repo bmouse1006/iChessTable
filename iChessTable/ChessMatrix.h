@@ -22,6 +22,7 @@
 
 -(void)offTable;
 -(BOOL)isOffTable;
+-(BOOL)isEqualToPoint:(MatrixPoint*)point;
 
 @end
 

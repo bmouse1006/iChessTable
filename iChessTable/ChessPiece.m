@@ -8,7 +8,7 @@
 
 #import "ChessPiece.h"
 #import "ChessMatrix.h"
-#import "NSString+ChessColor.h"
+#import "NSString+ChessPieceColor.h"
 
 @implementation ChessPiece
 
@@ -17,7 +17,7 @@
 @synthesize color = _color;
 @synthesize origin = _origin;
 
-+(ChessPiece*)chessPieceWithProperyList:(NSDictionary*)plist andColor:(ChessColor)color{
++(ChessPiece*)chessPieceWithProperyList:(NSDictionary*)plist andColor:(ChessPieceColor)color{
     ChessPiece* piece = nil;
     @try {
         piece = [[[ChessPiece alloc] init] autorelease];
@@ -38,7 +38,8 @@
 }
 
 -(NSString*)getImageName{
-    NSString* name = [NSString stringWithFormat:@"%@_%@_%@", self.chessName, self.name, [NSString chessColorString:self.color]];
+    //format of name is self.chessName_self.name_colorstr
+    NSString* name = [NSString stringWithFormat:@"%@_%@_%@", self.chessName, self.name, [NSString ChessPieceColorString:self.color]];
     //add more code in the future for different devices - iPhone and iPad
     return name;
 }

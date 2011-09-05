@@ -11,11 +11,11 @@
 
 @interface ChessJudge : NSObject{
     id<ChessRules> _rules;
-    ChessColor _currentPlayer;
+    ChessPieceColor _currentColor;
 }
 
 @property (nonatomic, retain) id<ChessRules> rules;
-@property (nonatomic, assign) ChessColor currentPlayer;
+@property (nonatomic, assign) ChessPieceColor currentColor;
 //generate a new judge with given rules
 +(ChessJudge*)judgeWithRules:(id<ChessRules>)rules;
 
@@ -23,9 +23,13 @@
 -(BOOL)doesPieceCanBeMoved:(ChessPiece*)piece table:(ChessTable*)table;
 -(BOOL)doesPieceCanBeDropped:(ChessPiece*)piece to:(MatrixPoint*)to table:(ChessTable*)table;
 -(BOOL)isTouchInTableLegal:(ChessTable*)table location:(MatrixPoint*)location;
+-(BOOL)couldContinuePlayInTable:(ChessTable*)table;
 
 -(ChessStep*)stepForDropping:(ChessPiece*)piece to:(MatrixPoint*)to inTable:(ChessTable*)table;
+-(ChessStep*)stepForMoving:(ChessPiece*)piece from:(MatrixPoint*)from to:(MatrixPoint*)to inTable:(ChessTable*)table;
 -(void)switchPlayer;
--(ChessColor)winnerInTable:(ChessTable*)table;
+-(ChessPieceColor)winnerInTable:(ChessTable*)table;
+
+-(void)resetTable:(Chess*)chess;
 
 @end

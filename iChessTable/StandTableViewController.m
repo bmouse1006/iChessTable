@@ -122,8 +122,8 @@
     NSInteger start = indexPath.row*CHESSNUMINONEROW;
     NSInteger end = ((start+CHESSNUMINONEROW)>[self.chessList count])?([self.chessList count]):(start+CHESSNUMINONEROW);
     for(int i = start; i<end; i++){
-        [[NSBundle mainBundle] loadNibNamed:@"StandGameIcon" owner:self options:nil];
-        [self.tempIcon setupGameIcon:[self.chessList objectForKey:[[self.chessList allKeys] objectAtIndex:i]]];
+        [[NSBundle mainBundle] loadNibNamed:@"StandGameIcon" owner:self options:nil];           
+        [self.tempIcon setupGameIcon:[self.chessList objectForKey:[_chessListKeys objectAtIndex:i]]];
         [cell addAnIcon:self.tempIcon];
         self.tempIcon = nil;
     }
@@ -191,8 +191,23 @@
         DebugLog(@"path is %@", filePath);
         self.chessList = [NSDictionary dictionaryWithContentsOfFile:filePath];
     }
-    
     return _chessList;
 }
+                         
+ -(void)setChessList:(NSDictionary *)chessList{
+     if (_chessList != chessList){
+         [_chessList release];
+         [_chessListKeys release];
+         _chessList = nil;
+         _chessList = chessList;
+         [_chessList retain];
+         _chessListKeys = [_chessList keysSortedByValueUsingComparator:^(id dic1, id dic2) {
+             NSString* index1 = [dic1 objectForKey:@"index"];
+             NSString* index2 = [dic2 objectForKey:@"index"];
+             return [index1 compare:index2];
+         }];
+         [_chessListKeys retain];
+     }
+ }
 
 @end

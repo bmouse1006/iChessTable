@@ -67,7 +67,7 @@
     ChessSingleStep* step = [[ChessSingleStep alloc] init];
     step.type = ChessSingleStepTypeAdd;
     step.piece = piece;
-    step.from = location; 
+    step.to = location; 
     [self.singleSteps addObject:step];
     [step release];
 }
@@ -76,7 +76,7 @@
     ChessSingleStep* step = [[ChessSingleStep alloc] init];
     step.type = ChessSingleStepTypeDelete;
     step.piece = piece;
-    step.from = location; 
+    step.to = location; 
     [self.singleSteps addObject:step];
     [step release];
 }

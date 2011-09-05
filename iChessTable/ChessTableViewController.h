@@ -26,7 +26,7 @@
 @property (nonatomic, retain, setter = setTable:) ChessTable* table;
 @property (nonatomic, retain) ChessGameController* game;
 @property (nonatomic, retain) ChessTableView* tableView;
-@property (nonatomic, retain) ChessPieceView* selectedPieceView;//only one selected piece view
+@property (nonatomic, retain, setter = setSelectedPieceView:) ChessPieceView* selectedPieceView;//only one selected piece view
 
 +(id)tableViewControllerWithChessTable:(ChessTable*)table;
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil chessTable:(ChessTable*)table;

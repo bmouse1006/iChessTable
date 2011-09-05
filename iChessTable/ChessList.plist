@@ -4,6 +4,8 @@
 <dict>
 	<key>Othello</key>
 	<dict>
+		<key>index</key>
+		<integer>0</integer>
 		<key>name</key>
 		<string>Othello</string>
 		<key>thumbnail</key>
@@ -17,6 +19,8 @@
 	</dict>
 	<key>Othello - 2</key>
 	<dict>
+		<key>index</key>
+		<integer>1</integer>
 		<key>name</key>
 		<string>Othello2</string>
 		<key>thumbnail</key>
@@ -30,6 +34,8 @@
 	</dict>
 	<key>Othello - 3</key>
 	<dict>
+		<key>index</key>
+		<integer>2</integer>
 		<key>name</key>
 		<string>Othello3</string>
 		<key>thumbnail</key>
@@ -43,6 +49,8 @@
 	</dict>
 	<key>Othello - 4</key>
 	<dict>
+		<key>index</key>
+		<integer>3</integer>
 		<key>name</key>
 		<string>Othello4</string>
 		<key>thumbnail</key>
@@ -54,10 +62,12 @@
 		<key>locked</key>
 		<false/>
 	</dict>
-	<key>Othello - 5</key>
+	<key>Othello - 4 - 2</key>
 	<dict>
+		<key>index</key>
+		<integer>4</integer>
 		<key>name</key>
-		<string>Othello5</string>
+		<string>Othello4</string>
 		<key>thumbnail</key>
 		<string>othello_thumbnail</string>
 		<key>desc</key>
@@ -67,10 +77,12 @@
 		<key>locked</key>
 		<false/>
 	</dict>
-	<key>Othello - 6</key>
+	<key>Othello - 4 - 3</key>
 	<dict>
+		<key>index</key>
+		<integer>5</integer>
 		<key>name</key>
-		<string>Othello6</string>
+		<string>Othello4</string>
 		<key>thumbnail</key>
 		<string>othello_thumbnail</string>
 		<key>desc</key>
@@ -80,10 +92,12 @@
 		<key>locked</key>
 		<false/>
 	</dict>
-	<key>Othello - 7</key>
+	<key>Othello - 4 - 4</key>
 	<dict>
+		<key>index</key>
+		<integer>6</integer>
 		<key>name</key>
-		<string>Othello7</string>
+		<string>Othello4</string>
 		<key>thumbnail</key>
 		<string>othello_thumbnail</string>
 		<key>desc</key>
@@ -93,10 +107,12 @@
 		<key>locked</key>
 		<false/>
 	</dict>
-	<key>Othello - 8</key>
+	<key>Othello - 4 - 5</key>
 	<dict>
+		<key>index</key>
+		<integer>7</integer>
 		<key>name</key>
-		<string>Othello8</string>
+		<string>Othello4</string>
 		<key>thumbnail</key>
 		<string>othello_thumbnail</string>
 		<key>desc</key>
@@ -106,10 +122,12 @@
 		<key>locked</key>
 		<false/>
 	</dict>
-	<key>Othello - 9</key>
+	<key>Othello - 4 - 6</key>
 	<dict>
+		<key>index</key>
+		<integer>8</integer>
 		<key>name</key>
-		<string>Othello9</string>
+		<string>Othello4</string>
 		<key>thumbnail</key>
 		<string>othello_thumbnail</string>
 		<key>desc</key>
@@ -119,10 +137,12 @@
 		<key>locked</key>
 		<false/>
 	</dict>
-	<key>Othello - 10</key>
+	<key>Othello - 4 - 7</key>
 	<dict>
+		<key>index</key>
+		<integer>9</integer>
 		<key>name</key>
-		<string>Othello10</string>
+		<string>Othello4</string>
 		<key>thumbnail</key>
 		<string>othello_thumbnail</string>
 		<key>desc</key>
@@ -132,100 +152,5 @@
 		<key>locked</key>
 		<false/>
 	</dict>
-	<key>Othello - 11</key>
-	<dict>
-		<key>name</key>
-		<string>Othello</string>
-		<key>thumbnail</key>
-		<string>othello_thumbnail</string>
-		<key>desc</key>
-		<string>othello othello</string>
-		<key>chessBundleName</key>
-		<string>Othello</string>
-		<key>locked</key>
-		<false/>
-	</dict>
-	<key>Othello - 12</key>
-	<dict>
-		<key>name</key>
-		<string>Othello</string>
-		<key>thumbnail</key>
-		<string>othello_thumbnail</string>
-		<key>desc</key>
-		<string>othello othello</string>
-		<key>chessBundleName</key>
-		<string>Othello</string>
-		<key>locked</key>
-		<false/>
-	</dict>
-	<key>Othello - 13</key>
-	<dict>
-		<key>name</key>
-		<string>Othello</string>
-		<key>thumbnail</key>
-		<string>othello_thumbnail</string>
-		<key>desc</key>
-		<string>othello othello</string>
-		<key>chessBundleName</key>
-		<string>Othello</string>
-		<key>locked</key>
-		<false/>
-	</dict>
-	<key>Othello - 14</key>
-	<dict>
-		<key>name</key>
-		<string>Othello</string>
-		<key>thumbnail</key>
-		<string>othello_thumbnail</string>
-		<key>desc</key>
-		<string>othello othello</string>
-		<key>chessBundleName</key>
-		<string>Othello</string>
-		<key>locked</key>
-		<false/>
-	</dict>
-	<key>Othello - 15</key>
-	<dict>
-		<key>name</key>
-		<string>Othello</string>
-		<key>thumbnail</key>
-		<string>othello_thumbnail</string>
-		<key>desc</key>
-		<string>othello othello</string>
-		<key>chessBundleName</key>
-		<string>Othello</string>
-		<key>locked</key>
-		<false/>
-	</dict>
-	<key>Othello - 16</key>
-	<dict>
-		<key>name</key>
-		<string>Othello</string>
-		<key>thumbnail</key>
-		<string>othello_thumbnail</string>
-		<key>desc</key>
-		<string>othello othello</string>
-		<key>chessBundleName</key>
-		<string>Othello</string>
-		<key>locked</key>
-		<false/>
-	</dict>
-	<key>Othello - 17</key>
-	<dict>
-		<key>name</key>
-		<string>Othello</string>
-		<key>thumbnail</key>
-		<string>othello_thumbnail</string>
-		<key>desc</key>
-		<string>othello othello</string>
-		<key>chessBundleName</key>
-		<string>Othello</string>
-		<key>locked</key>
-		<false/>
-	</dict>
-	<key>New item</key>
-	<array>
-		<string></string>
-	</array>
 </dict>
 </plist>

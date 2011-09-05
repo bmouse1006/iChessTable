@@ -7,7 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ChessPiece.h"
 
-@interface ChessPlayer : NSObject
+typedef enum{
+    ChessPlayerTypePeople,
+    ChessPlayerTypeAI,
+    ChessPlayerTypeBlueTooth,
+    ChessPlayerTypeGameCenter
+} ChessPlayerType;
+
+@interface ChessPlayer : NSObject{
+    ChessPieceColor _color;
+    ChessPlayerType _type;
+}
+
+@property (nonatomic, assign) ChessPieceColor color;
+@property (nonatomic, assign) ChessPlayerType type;
+
++(ChessPlayer*)playerWithColor:(ChessPieceColor)color andType:(ChessPlayerType)type;
+
+//tell the player go head to play
+-(void)play;
 
 @end

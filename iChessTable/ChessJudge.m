@@ -7,11 +7,13 @@
 //
 
 #import "ChessJudge.h"
+#import "ChessRules.h"
+#import "ChessTable.h"
 
 @implementation ChessJudge
 
 @synthesize rules = _rules;
-@synthesize currentPlayer = _currentPlayer;
+@synthesize currentColor = _currentColor;
 
 +(ChessJudge*)judgeWithRules:(id<ChessRules>)rules{
     ChessJudge* judge = [[ChessJudge alloc] init];
@@ -26,6 +28,7 @@
     self = [super init];
     if (self) {
         // Initialization code here.
+        self.currentColor = ChessWhiteColor;
     }
     
     return self;
@@ -40,42 +43,65 @@
     //if pieces of this chess are not allowed to be selected/moved
     //return NO
     //else return YES;
-    return [self.rules pieceMovingAllowed];
+    BOOL result = NO;
+    if (piece.color != self.currentColor){
+        result = NO;
+    }else if (table.movedInThisRound != nil){
+        result = NO;
+    }else{
+        result = [self.rules pieceMovingAllowed];
+    }
+    return result;
 }
 
 -(BOOL)doesPieceCanBeMoved:(ChessPiece*)piece table:(ChessTable*)table{
     return [self.rules pieceMovingAllowed];
 }
 -(BOOL)doesPieceCanBeDropped:(ChessPiece*)piece to:(MatrixPoint*)to table:(ChessTable*)table{
-    BOOL result = NO;
-    return result;
+    return [self.rules isDroppingLegal:to table:table];
 }
 -(BOOL)isTouchInTableLegal:(ChessTable*)table location:(MatrixPoint*)location{
     BOOL result = NO;
     return result;
 }
 
+-(BOOL)couldContinuePlayInTable:(ChessTable*)table{
+    return [self.rules hasMoreStepsForPiece:table.movedInThisRound 
+                                      table:table];
+}
+
 -(ChessStep*)stepForDropping:(ChessPiece*)piece to:(MatrixPoint*)to inTable:(ChessTable*)table{
     return [self.rules generateStepForDropping:piece to:to inTable:table];
 }
 
+-(ChessStep*)stepForMoving:(ChessPiece*)piece from:(MatrixPoint*)from to:(MatrixPoint*)to inTable:(ChessTable*)table{
+    return [self.rules generateStepForMovingFrom:from to:to table:table];
+}
+
 -(void)switchPlayer{
-    switch (self.currentPlayer) {
+    switch (self.currentColor) {
         case ChessBlackColor:
-            self.currentPlayer = ChessWhiteColor;
+            self.currentColor = ChessWhiteColor;
             break;
         case ChessWhiteColor:
-            self.currentPlayer = ChessBlackColor;
+            self.currentColor = ChessBlackColor;
             break;
-        case ChessNoneColor:
+        case ChessMaxColor:
             break;
         default:
             break;
     }
+    DebugLog(@"NOTIFICATION_GAME_SWITCHPLAYER is send", nil);
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_GAME_SWITCHPLAYER object:nil];
 }
 
--(ChessColor)winnerInTable:(ChessTable*)table{
+-(ChessPieceColor)winnerInTable:(ChessTable*)table{
     return [self.rules winnerInTable:table];
+}
+
+-(void)resetTable:(Chess*)chess{
+    DebugLog(@"Chess Judge: reset table", nil);
+    [self.rules resetChessTable:chess];
 }
 
 @end
