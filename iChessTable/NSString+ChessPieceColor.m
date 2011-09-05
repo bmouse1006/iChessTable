@@ -1,17 +1,17 @@
 //
-//  NSString+ChessColor.m
+//  NSString+ChessPieceColor.m
 //  iChessTable
 //
 //  Created by Jin Jin on 11-8-12.
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
 
-#import "NSString+ChessColor.h"
+#import "NSString+ChessPieceColor.h"
 #import "ChessPiece.h"
 
-@implementation NSString (NSString_ChessColor)
+@implementation NSString (NSString_ChessPieceColor)
 
-+(NSString*)chessColorString:(ChessColor)color{
++(NSString*)ChessPieceColorString:(ChessPieceColor)color{
     NSString* colorStr = nil;
     switch (color) {
         case ChessBlackColor:
@@ -20,8 +20,8 @@
         case ChessWhiteColor:
             colorStr = CHESSWHITECOLOR;
             break;
-        case ChessNoneColor:
-            colorStr = CHESSNONECOLOR;
+        case ChessMaxColor:
+            colorStr = CHESSMAXCOLOR;
             break;
         default:
             break;

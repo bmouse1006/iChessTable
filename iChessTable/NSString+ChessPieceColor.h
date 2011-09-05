@@ -1,5 +1,5 @@
 //
-//  NSString+ChessColor.h
+//  NSString+ChessPieceColor.h
 //  iChessTable
 //
 //  Created by Jin Jin on 11-8-12.
@@ -11,10 +11,10 @@
 
 #define CHESSBLACKCOLOR @"chessBlackColor"
 #define CHESSWHITECOLOR @"chessWhiteColor"
-#define CHESSNONECOLOR @"chessNoneColor"
+#define CHESSMAXCOLOR @"ChessMaxColor"
 
-@interface NSString (NSString_ChessColor)
+@interface NSString (NSString_ChessPieceColor)
 
-+(NSString*)chessColorString:(ChessColor)color;
++(NSString*)ChessPieceColorString:(ChessPieceColor)color;
 
 @end
