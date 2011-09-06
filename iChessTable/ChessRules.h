@@ -17,7 +17,6 @@
 
 //if piece moving is allowed
 -(BOOL)pieceMovingAllowed;
--(ChessPieceColor)firstHandPlayer;
 //reset the game table to the original status
 -(void)resetChessTable:(Chess*)chess;
 //chec if select is legal
@@ -25,7 +24,7 @@
 //check if dropping in the table is legal or not
 -(BOOL)isDroppingLegal:(MatrixPoint*)point table:(ChessTable*)table;
 //check if the moving in table is legal or not
--(BOOL)isMoveLegalFrom:(MatrixPoint*)from to:(MatrixPoint*)to table:(ChessTable*)table;
+-(BOOL)isMovingLegalFrom:(MatrixPoint*)from to:(MatrixPoint*)to table:(ChessTable*)table;
 //chec if has more steps for the piece
 -(BOOL)hasMoreStepsForPiece:(ChessPiece*)piece table:(ChessTable*)table;
 //generate a step for dropping in the table. This instance of step will be passed to table to move/add/delete piece

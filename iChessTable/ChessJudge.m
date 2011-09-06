@@ -39,7 +39,7 @@
     [super dealloc];
 }
 
--(BOOL)doesPieceCanBeSelected:(ChessPiece*)piece table:(ChessTable*)table{
+-(BOOL)piece:(ChessPiece*)piece canBeSelectedInTable:(ChessTable*)table;{
     //if pieces of this chess are not allowed to be selected/moved
     //return NO
     //else return YES;
@@ -54,15 +54,19 @@
     return result;
 }
 
--(BOOL)doesPieceCanBeMoved:(ChessPiece*)piece table:(ChessTable*)table{
-    return [self.rules pieceMovingAllowed];
+-(BOOL)piece:(ChessPiece*)piece canBeMovedFrom:(MatrixPoint*)from to:(MatrixPoint*)to table:(ChessTable*)table{
+    return [self.rules isMovingLegalFrom:from to:to table:table];
 }
--(BOOL)doesPieceCanBeDropped:(ChessPiece*)piece to:(MatrixPoint*)to table:(ChessTable*)table{
+-(BOOL)piece:(ChessPiece*)piece canBeDroppedTo:(MatrixPoint*)to table:(ChessTable*)table{
     return [self.rules isDroppingLegal:to table:table];
 }
 -(BOOL)isTouchInTableLegal:(ChessTable*)table location:(MatrixPoint*)location{
     BOOL result = NO;
     return result;
+}
+
+-(BOOL)isMovingAllowed{
+    return [self.rules pieceMovingAllowed];
 }
 
 -(BOOL)couldContinuePlayInTable:(ChessTable*)table{

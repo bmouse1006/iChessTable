@@ -6,6 +6,7 @@
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "ChessTableView.h"
 #import "ChessPieceView.h"
 #import "ChessPiece.h"
@@ -38,10 +39,18 @@
         self.table = table;
         CGSize imageSize = self.image.size;
         self.tableRect = CGRectMake((imageSize.width - self.table.width)/2, (imageSize.height - self.table.height)/2, self.table.width, self.table.height);
+        //caculate width and height for every single grid
         self.gridNodeWidth = self.table.width/self.table.matrix.horiNodes;
         self.gridNodeHeight = self.table.height/self.table.matrix.vertNodes;
+        //set interact parameters
         self.multipleTouchEnabled = NO;
         self.userInteractionEnabled = YES;
+        //set shadow
+//        self.layer.shadowOpacity = 0.6;
+//        self.layer.shadowColor = [UIColor blackColor].CGColor;
+//        self.layer.shadowOffset = CGSizeMake(0, 0);
+//        self.layer.shadowRadius = 50;
+//        self.layer.cornerRadius = 60.0;
     }
     
     return self;

@@ -33,5 +33,9 @@
 -(void)fix;
 
 -(BOOL)touchesInScope:(NSSet*)touches;
+//enable and disable effect
+-(void)enableEffect;
+-(void)disableEffect;
+-(void)setEffect;
 
 @end

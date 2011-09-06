@@ -55,32 +55,30 @@
     return YES;
 }
 //check if dropping in the table is legal or not
--(BOOL)isDroppingLegal:(MatrixPoint*)point table:(ChessTable*)table{
-    return YES;
+-(BOOL)isDroppingLegal:(MatrixPoint*)to table:(ChessTable*)table{
+    return ([table.matrix pieceAtLocation:to] == nil)?YES:NO;
 }
 //check if the moving in table is legal or not
--(BOOL)isMoveLegalFrom:(MatrixPoint*)from to:(MatrixPoint*)to table:(ChessTable*)table{
-    return YES;
+-(BOOL)isMovingLegalFrom:(MatrixPoint*)from to:(MatrixPoint*)to table:(ChessTable*)table{
+    return ([table.matrix pieceAtLocation:to] == nil)?YES:NO;
 }
 //generate a step for dropping in the table. This instance of step will be passed to table to move/add/delete piece
 -(ChessStep*)generateStepForDropping:(ChessPiece*)piece to:(MatrixPoint*)to inTable:(ChessTable*)table{
     ChessStep* step = [[[ChessStep alloc] init] autorelease];
     [step addPiece:piece at:to];
+    [step sortSingleSteps];
     return step;
 }
 -(ChessStep*)generateStepForMovingFrom:(MatrixPoint*)from to:(MatrixPoint*)to table:(ChessTable*)table{
     ChessStep* step = [[[ChessStep alloc] init] autorelease];
     ChessPiece* piece = [table.matrix pieceAtLocation:from];
     [step movePiece:piece from:from to:to];
+    [step sortSingleSteps];
     return step;
 }
 //check if the player is winner
 -(ChessPieceColor)winnerInTable:(ChessTable*)table{
     //add more code later
-    return ChessMaxColor;
-}
-
--(ChessPieceColor)firstHandPlayer{
     return ChessMaxColor;
 }
 

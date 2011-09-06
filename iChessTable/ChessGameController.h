@@ -22,6 +22,7 @@
 @property (nonatomic, retain) Chess* chess;
 @property (nonatomic, retain) ChessJudge* judge;
 @property (nonatomic, assign) ChessGameMode mode;
+@property (nonatomic, readonly, getter = getCurrentPlayer) ChessPlayer* currentPlayer;
 
 //create a new game controller via chess bundle name
 +(ChessGameController*)gameControllerWithChessBundleName:(NSString*)name mode:(ChessGameMode)mode choosenColor:(ChessPieceColor)color;

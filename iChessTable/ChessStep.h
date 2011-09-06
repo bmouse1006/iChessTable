@@ -11,9 +11,9 @@
 @class MatrixPoint, ChessPiece;
 
 typedef enum {
-    ChessSingleStepTypeAdd = 1,
     ChessSingleStepTypeDelete,
-    ChessSingleStepTypeMove
+    ChessSingleStepTypeMove,
+    ChessSingleStepTypeAdd,
 } ChessSingleStepType;
 
 @interface ChessSingleStep : NSObject {
@@ -45,5 +45,11 @@ typedef enum {
 -(void)movePiece:(ChessPiece*)piece from:(MatrixPoint*)fromLocation to:(MatrixPoint*)toLocation;
 
 -(NSEnumerator*)singleStepEnumerator;
+//sort single steps
+//priority:
+//1. remove
+//2. move
+//3. add
+-(void)sortSingleSteps;
 
 @end

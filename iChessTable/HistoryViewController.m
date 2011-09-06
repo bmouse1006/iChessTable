@@ -5,7 +5,7 @@
 //  Created by Jin Jin on 11-8-30.
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
-
+#import <QuartzCore/QuartzCore.h>
 #import "HistoryViewController.h"
 #import "HistoryTableViewController.h"
 
@@ -47,6 +47,12 @@
     CGRect history = self.historyTableViewController.view.frame;
     history.origin.y = self.historyTitleView.frame.size.height;
     [self.historyTableViewController.view setFrame:history];
+    //set shadow for title view
+//    self.historyTableViewController.view.layer.shadowOpacity = 0.6;
+//    self.historyTableViewController.view.layer.shadowColor = [UIColor blackColor].CGColor;
+//    self.historyTableViewController.view.layer.shadowOffset = CGSizeMake(0, 0);
+//    self.historyTableViewController.view.layer.shadowRadius = 40;
+//    [self.view bringSubviewToFront:self.historyTableViewController.view];
 }
 
 - (void)viewDidUnload

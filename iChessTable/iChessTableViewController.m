@@ -42,8 +42,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //load game stand controller and history view controller to the containers
     [self.standContainer addSubview:self.gameStandController.view];
     [self.historyContainer addSubview:self.historyViewController.view];
+    //adjust location
     CGRect stand = self.gameStandController.view.frame;
     CGRect history = self.historyViewController.view.frame;
     stand.origin.y = 0;
@@ -79,16 +81,11 @@
     self.gameViewController = newGame;
     [newGame release];
     
-//    [self.view addSubview:self.gameViewController.view];
-//    [self.view bringSubviewToFront:self.gameViewController.view];
-//    [UIView transitionWithView:self.view
-//                      duration:0.2
-//                       options:UIViewAnimationOptionShowHideTransitionViews
-//                    animations:^{[self.view addSubview:self.gameViewController.view]; }
-//                    completion:NULL];
-//    self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentModalViewController:self.gameViewController
-                            animated:YES];
+    //present game view controller as a modal view, with transparent background color
+    UIViewController* controller = self.view.window.rootViewController;
+    controller.modalPresentationStyle = UIModalPresentationCurrentContext;        
+    [controller presentModalViewController:self.gameViewController
+                                  animated:YES];
 }
 
 -(void)registerNotifications{

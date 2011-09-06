@@ -1,14 +1,14 @@
 //
-//  PlayerControlPanelView.m
+//  ControlPanelWidget.m
 //  iChessTable
 //
-//  Created by Jin Jin on 11-8-22.
+//  Created by Jin Jin on 11-9-6.
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
 
-#import "PlayerControlPanelView.h"
+#import "ControlPanelWidget.h"
 
-@implementation PlayerControlPanelView
+@implementation ControlPanelWidget
 
 - (id)initWithFrame:(CGRect)frame
 {

@@ -5,7 +5,7 @@
 //  Created by Jin Jin on 11-8-30.
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
-
+#import <QuartzCore/QuartzCore.h>
 #import "StandGameIcon.h"
 
 @implementation StandGameIcon
@@ -29,6 +29,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        //setup shadow
+        
     }
     return self;
 }
@@ -51,6 +53,11 @@
     self.desc = [icon objectForKey:@"desc"];
     self.chessName.text = [icon objectForKey:@"name"];
     self.locked = [(NSNumber*)[icon objectForKey:@"locked"] boolValue];
+    
+    self.layer.shadowOffset = CGSizeMake(5, 3);
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.layer.shadowOpacity = 0.6f;
+    self.layer.cornerRadius = 10;
 }
 
 /*

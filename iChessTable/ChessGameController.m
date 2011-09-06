@@ -20,7 +20,9 @@
 @synthesize mode = _mode;
 
 //factory method
-+(ChessGameController*)gameControllerWithChessBundleName:(NSString*)name mode:(ChessGameMode)mode choosenColor:(ChessPieceColor)color{
++(ChessGameController*)gameControllerWithChessBundleName:(NSString*)name 
+                                                    mode:(ChessGameMode)mode 
+                                            choosenColor:(ChessPieceColor)color{
     //generate a new game controller
     ChessGameController* gameController = [[ChessGameController alloc] init];
     //generate a chess instance with bundle name
@@ -69,7 +71,7 @@
     //invoke judge to setup game table
     [self.judge resetTable:self.chess];
     //player for white color to play
-    [_players[self.judge.currentColor] play];
+    [self.currentPlayer play];
 }
 
 -(void)afterAction{
@@ -85,21 +87,12 @@
         //        [self postNotificationWithName:xxxxx];
     }else{
         //if no one is winner
-        [self.judge switchPlayer];
-        switch (self.mode) {
-            case ChessGameModeOnePlayer:
-                break;
-            case ChessGameModeTwoPlayers:
-                break;
-            case ChessGameModeBlueTooth:
-                break;
-            case ChessGameModeGameCenter:
-                break;
-            default:
-                break;
-        }
+        //1. switch player
+        //2. player plays
         //empty moved piece in the last round
         self.chess.table.movedInThisRound = nil;
+        [self.judge switchPlayer];
+        [self.currentPlayer play];
     }
 }
 

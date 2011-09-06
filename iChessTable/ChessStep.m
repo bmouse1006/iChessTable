@@ -52,7 +52,7 @@
 @synthesize singleSteps = _singleSteps;
 
 -(ChessStep*)reverse{
-    ChessStep* reversedStep = [[ChessStep alloc] init];
+    ChessStep* reversedStep = [[[ChessStep alloc] init] autorelease];
     
     NSEnumerator* enumerator = [self.singleSteps reverseObjectEnumerator];
     ChessSingleStep* step = nil;
@@ -60,7 +60,9 @@
         [reversedStep.singleSteps addObject:[step reverse]];
     }
     
-    return [reversedStep autorelease];
+    [reversedStep sortSingleSteps];
+    
+    return reversedStep;
 }
 
 -(void)addPiece:(ChessPiece*)piece at:(MatrixPoint*)location{
@@ -109,6 +111,27 @@
 -(void)dealloc{
     self.singleSteps = nil;
     [super dealloc];
+}
+
+//priority:
+//1. remove
+//2. move
+//3. add
+-(void)sortSingleSteps{
+    [self.singleSteps sortUsingComparator:^(id obj1, id obj2){
+        NSComparisonResult result;
+        ChessSingleStepType type1 = ((ChessSingleStep*)obj1).type;
+        ChessSingleStepType type2 = ((ChessSingleStep*)obj2).type;
+        if (type1 < type2){
+            result = NSOrderedAscending;
+        }else if (type1 > type2){
+            result = NSOrderedDescending;
+        }else{
+            result = NSOrderedSame;
+        }
+        
+        return result;
+    }];
 }
 
 @end

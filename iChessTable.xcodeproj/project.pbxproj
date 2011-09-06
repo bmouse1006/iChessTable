@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2200A1E314161ECB00D00376 /* PlayerControlPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2200A1E114161ECB00D00376 /* PlayerControlPanelController.m */; };
+		2200A1E414161ECB00D00376 /* PlayerControlPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2200A1E214161ECB00D00376 /* PlayerControlPanelController.xib */; };
 		2204934214034FF3007CB4AB /* ChessTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204934114034FF3007CB4AB /* ChessTableView.m */; };
+		2219BF18141671A5002F84A9 /* ControlPanelWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 2219BF17141671A5002F84A9 /* ControlPanelWidget.m */; };
 		22291E2013F51C7B00D9F91D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22291E1F13F51C7B00D9F91D /* UIKit.framework */; };
 		22291E2213F51C7B00D9F91D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22291E2113F51C7B00D9F91D /* Foundation.framework */; };
 		22291E2413F51C7B00D9F91D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22291E2313F51C7B00D9F91D /* CoreGraphics.framework */; };
@@ -41,7 +44,6 @@
 		224A3EB1140F85D1007CF045 /* MultiTouchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 224A3EB0140F85D1007CF045 /* MultiTouchImageView.m */; };
 		224B6F7B14024FFD0042FDC3 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224B6F7914024FFC0042FDC3 /* GameViewController.m */; };
 		224B6F7C14024FFD0042FDC3 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224B6F7A14024FFC0042FDC3 /* GameViewController.xib */; };
-		224B6F83140250A10042FDC3 /* PlayerControlPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 224B6F82140250A00042FDC3 /* PlayerControlPanelView.m */; };
 		224B6F88140294C70042FDC3 /* ChessTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224B6F86140294C60042FDC3 /* ChessTableViewController.m */; };
 		224B6F89140294C70042FDC3 /* ChessTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224B6F87140294C70042FDC3 /* ChessTableViewController.xib */; };
 		2273CDED1414F9F500E256E7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2273CDEC1414F9F400E256E7 /* QuartzCore.framework */; };
@@ -74,9 +76,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2200A1E014161ECB00D00376 /* PlayerControlPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerControlPanelController.h; sourceTree = "<group>"; };
+		2200A1E114161ECB00D00376 /* PlayerControlPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerControlPanelController.m; sourceTree = "<group>"; };
+		2200A1E214161ECB00D00376 /* PlayerControlPanelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerControlPanelController.xib; sourceTree = "<group>"; };
 		2204934014034FF3007CB4AB /* ChessTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessTableView.h; sourceTree = "<group>"; };
 		2204934114034FF3007CB4AB /* ChessTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessTableView.m; sourceTree = "<group>"; };
 		220493481404AB4C007CB4AB /* ChessViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessViewControllerDelegate.h; sourceTree = "<group>"; };
+		2219BF16141671A5002F84A9 /* ControlPanelWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPanelWidget.h; sourceTree = "<group>"; };
+		2219BF17141671A5002F84A9 /* ControlPanelWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlPanelWidget.m; sourceTree = "<group>"; };
 		22291E1B13F51C7B00D9F91D /* iChessTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChessTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22291E1F13F51C7B00D9F91D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22291E2113F51C7B00D9F91D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -129,8 +136,6 @@
 		224B6F7814024FFC0042FDC3 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		224B6F7914024FFC0042FDC3 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		224B6F7A14024FFC0042FDC3 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
-		224B6F81140250A00042FDC3 /* PlayerControlPanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerControlPanelView.h; sourceTree = "<group>"; };
-		224B6F82140250A00042FDC3 /* PlayerControlPanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerControlPanelView.m; sourceTree = "<group>"; };
 		224B6F84140251570042FDC3 /* ChessGamePredefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessGamePredefine.h; sourceTree = "<group>"; };
 		224B6F85140294C60042FDC3 /* ChessTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessTableViewController.h; sourceTree = "<group>"; };
 		224B6F86140294C60042FDC3 /* ChessTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessTableViewController.m; sourceTree = "<group>"; };
@@ -190,7 +195,6 @@
 		22291E1013F51C7B00D9F91D = {
 			isa = PBXGroup;
 			children = (
-				2273CDEC1414F9F400E256E7 /* QuartzCore.framework */,
 				22291E2513F51C7B00D9F91D /* iChessTable */,
 				22291E4713F51C7C00D9F91D /* iChessTableTests */,
 				22291E1E13F51C7B00D9F91D /* Frameworks */,
@@ -210,6 +214,7 @@
 		22291E1E13F51C7B00D9F91D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2273CDEC1414F9F400E256E7 /* QuartzCore.framework */,
 				22291E1F13F51C7B00D9F91D /* UIKit.framework */,
 				22291E2113F51C7B00D9F91D /* Foundation.framework */,
 				22291E2313F51C7B00D9F91D /* CoreGraphics.framework */,
@@ -294,20 +299,8 @@
 		2247504313FE573B0043E1F4 /* View+Controller */ = {
 			isa = PBXGroup;
 			children = (
-				227AA533140CC91A001577DA /* Mainscreen */,
-				2247504C13FE5DF80043E1F4 /* ChessPieceView.h */,
-				2247504D13FE5DF80043E1F4 /* ChessPieceView.m */,
-				2204934014034FF3007CB4AB /* ChessTableView.h */,
-				2204934114034FF3007CB4AB /* ChessTableView.m */,
-				224B6F7814024FFC0042FDC3 /* GameViewController.h */,
-				224B6F7914024FFC0042FDC3 /* GameViewController.m */,
-				224B6F7A14024FFC0042FDC3 /* GameViewController.xib */,
-				224B6F85140294C60042FDC3 /* ChessTableViewController.h */,
-				224B6F86140294C60042FDC3 /* ChessTableViewController.m */,
-				224B6F81140250A00042FDC3 /* PlayerControlPanelView.h */,
-				224B6F82140250A00042FDC3 /* PlayerControlPanelView.m */,
-				224B6F87140294C70042FDC3 /* ChessTableViewController.xib */,
-				220493481404AB4C007CB4AB /* ChessViewControllerDelegate.h */,
+				2273CDF314160CAF00E256E7 /* Game Screen */,
+				227AA533140CC91A001577DA /* Main screen */,
 			);
 			name = "View+Controller";
 			sourceTree = "<group>";
@@ -323,7 +316,30 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
-		227AA533140CC91A001577DA /* Mainscreen */ = {
+		2273CDF314160CAF00E256E7 /* Game Screen */ = {
+			isa = PBXGroup;
+			children = (
+				2247504C13FE5DF80043E1F4 /* ChessPieceView.h */,
+				2247504D13FE5DF80043E1F4 /* ChessPieceView.m */,
+				2204934014034FF3007CB4AB /* ChessTableView.h */,
+				2204934114034FF3007CB4AB /* ChessTableView.m */,
+				224B6F7814024FFC0042FDC3 /* GameViewController.h */,
+				224B6F7914024FFC0042FDC3 /* GameViewController.m */,
+				224B6F7A14024FFC0042FDC3 /* GameViewController.xib */,
+				224B6F85140294C60042FDC3 /* ChessTableViewController.h */,
+				224B6F86140294C60042FDC3 /* ChessTableViewController.m */,
+				224B6F87140294C70042FDC3 /* ChessTableViewController.xib */,
+				220493481404AB4C007CB4AB /* ChessViewControllerDelegate.h */,
+				2200A1E014161ECB00D00376 /* PlayerControlPanelController.h */,
+				2200A1E114161ECB00D00376 /* PlayerControlPanelController.m */,
+				2200A1E214161ECB00D00376 /* PlayerControlPanelController.xib */,
+				2219BF16141671A5002F84A9 /* ControlPanelWidget.h */,
+				2219BF17141671A5002F84A9 /* ControlPanelWidget.m */,
+			);
+			name = "Game Screen";
+			sourceTree = "<group>";
+		};
+		227AA533140CC91A001577DA /* Main screen */ = {
 			isa = PBXGroup;
 			children = (
 				22291E3413F51C7B00D9F91D /* iChessTableViewController.h */,
@@ -348,7 +364,7 @@
 				22AE8EC8140D1E23005BE331 /* StandGameIcon.m */,
 				22AE8ECB140D1E39005BE331 /* StandGameIcon.xib */,
 			);
-			name = Mainscreen;
+			name = "Main screen";
 			sourceTree = "<group>";
 		};
 		2282D95F13F5387A008CA309 /* ChessBundle */ = {
@@ -466,6 +482,7 @@
 				224A3EA6140E2B50007CF045 /* Othello.png in Resources */,
 				224A3EAA140E36E4007CF045 /* othello_round_chessWhiteColor.png in Resources */,
 				224A3EAB140E36E4007CF045 /* othello_round_chessBlackColor.png in Resources */,
+				2200A1E414161ECB00D00376 /* PlayerControlPanelController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +534,6 @@
 				2247504113FE0EFB0043E1F4 /* NSArray+ChessHelper.m in Sources */,
 				2247504E13FE5DF80043E1F4 /* ChessPieceView.m in Sources */,
 				224B6F7B14024FFD0042FDC3 /* GameViewController.m in Sources */,
-				224B6F83140250A10042FDC3 /* PlayerControlPanelView.m in Sources */,
 				224B6F88140294C70042FDC3 /* ChessTableViewController.m in Sources */,
 				2204934214034FF3007CB4AB /* ChessTableView.m in Sources */,
 				227AA537140CC9D2001577DA /* HistoryViewController.m in Sources */,
@@ -527,6 +543,8 @@
 				227AA55D140CFA4B001577DA /* StandTableViewCell.m in Sources */,
 				22AE8EC9140D1E23005BE331 /* StandGameIcon.m in Sources */,
 				224A3EB1140F85D1007CF045 /* MultiTouchImageView.m in Sources */,
+				2200A1E314161ECB00D00376 /* PlayerControlPanelController.m in Sources */,
+				2219BF18141671A5002F84A9 /* ControlPanelWidget.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

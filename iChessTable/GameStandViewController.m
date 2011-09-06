@@ -5,7 +5,7 @@
 //  Created by Jin Jin on 11-8-30.
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
-
+#import <QuartzCore/QuartzCore.h>
 #import "GameStandViewController.h"
 #import "StandTableViewController.h"
 
@@ -50,6 +50,12 @@
     stand.origin.y = self.standTitleView.frame.size.height;
     stand.size.width = self.standTitleView.frame.size.width;
     [self.standTableController.view setFrame:stand];
+    //set shadow for title view
+//    self.standTitleView.layer.shadowOpacity = 0.6;
+//    self.standTitleView.layer.shadowColor = [UIColor blackColor].CGColor;
+//    self.standTitleView.layer.shadowOffset = CGSizeMake(0, 0);
+//    self.standTitleView.layer.shadowRadius = 20;
+//    [self.view bringSubviewToFront:self.standTitleView];
 }
 
 - (void)viewDidUnload

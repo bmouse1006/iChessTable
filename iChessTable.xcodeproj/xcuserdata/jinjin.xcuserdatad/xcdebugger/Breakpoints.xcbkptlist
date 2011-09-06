@@ -23,11 +23,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "iChessTable/ChessPieceView.m"
-         timestampString = "336920061.118986"
+         timestampString = "336970226.31933"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "110"
-         endingLineNumber = "110"
+         startingLineNumber = "115"
+         endingLineNumber = "115"
          landmarkName = "-touchesInScope:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -51,11 +51,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "iChessTable/ChessJudge.m"
-         timestampString = "336927202.115606"
+         timestampString = "336968828.107383"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "69"
-         endingLineNumber = "69"
+         startingLineNumber = "73"
+         endingLineNumber = "73"
          landmarkName = "-couldContinuePlayInTable:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -65,11 +65,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "iChessTable/ChessGameController.m"
-         timestampString = "336926043.808061"
+         timestampString = "336993633.329506"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "81"
-         endingLineNumber = "81"
+         startingLineNumber = "83"
+         endingLineNumber = "83"
          landmarkName = "-afterAction"
          landmarkType = "5">
       </FileBreakpoint>
@@ -79,11 +79,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "iChessTable/ChessJudge.m"
-         timestampString = "336927724.130612"
+         timestampString = "336968828.107383"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "82"
-         endingLineNumber = "82"
+         startingLineNumber = "86"
+         endingLineNumber = "86"
          landmarkName = "-switchPlayer"
          landmarkType = "5">
       </FileBreakpoint>

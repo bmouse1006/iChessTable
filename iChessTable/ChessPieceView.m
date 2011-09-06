@@ -49,12 +49,17 @@
     DebugLog(@"to.x = %f", to.x);
     DebugLog(@"to.y = %f", to.y);
     [self fix];
+    [self enableEffect];
     [UIView animateWithDuration:0.2 
-                     animations:^{self.center = to;}];
+                     animations:^{self.center = to;} 
+                     completion:^(BOOL finished){[self setEffect];}];
 }
 
 -(void)moveBack{
-    [UIView animateWithDuration:0.2 animations:^{self.transform = CGAffineTransformIdentity;}];
+    [self enableEffect];
+    [UIView animateWithDuration:0.2 
+                     animations:^{self.transform = CGAffineTransformIdentity;} 
+                     completion:^(BOOL finished){[self setEffect];}];
     originalTransform = self.transform;
 }
 
@@ -92,7 +97,7 @@
     if ([self touchesInScope:touches] == YES){
         [super touchesEnded:touches withEvent:event];
         DebugLog(@"touch ended for piece view", nil);
-        [self.delegate pieceViewIsDropped:self];
+        [self.delegate pieceViewIsEndOfTouching:self];
         self.isMoving = NO;
     }
 }
@@ -115,10 +120,31 @@
     _selected = selected;
     if (_selected == YES){
         //add visual effect
-        self.layer.shadowOffset = CGSizeMake(10, 6);
+        [self enableEffect];
     }else{
         //remove visual effect
-        self.layer.shadowOffset = CGSizeMake(3, 2);
+        [self disableEffect];
+    }
+}
+     
+ -(void)enableEffect{
+     DebugLog(@"enable effect for piece view", nil);
+     self.layer.shadowOffset = CGSizeMake(10, 6);
+ }
+ -(void)disableEffect{
+     DebugLog(@"disable effect for piece view", nil);
+     self.layer.shadowOffset = CGSizeMake(3, 2);
+ }
+
+-(void)setEffect{
+    switch (self.selected) {
+        case YES:
+            [self enableEffect];
+            break;
+        case NO:
+            [self disableEffect];
+        default:
+            break;
     }
 }
 @end

@@ -19,9 +19,10 @@
 //generate a new judge with given rules
 +(ChessJudge*)judgeWithRules:(id<ChessRules>)rules;
 
--(BOOL)doesPieceCanBeSelected:(ChessPiece*)piece table:(ChessTable*)table;
--(BOOL)doesPieceCanBeMoved:(ChessPiece*)piece table:(ChessTable*)table;
--(BOOL)doesPieceCanBeDropped:(ChessPiece*)piece to:(MatrixPoint*)to table:(ChessTable*)table;
+-(BOOL)piece:(ChessPiece*)piece canBeSelectedInTable:(ChessTable*)table;
+-(BOOL)piece:(ChessPiece*)piece canBeMovedFrom:(MatrixPoint*)from to:(MatrixPoint*)to table:(ChessTable*)table;
+-(BOOL)piece:(ChessPiece*)piece canBeDroppedTo:(MatrixPoint*)to table:(ChessTable*)table;
+-(BOOL)isMovingAllowed;
 -(BOOL)isTouchInTableLegal:(ChessTable*)table location:(MatrixPoint*)location;
 -(BOOL)couldContinuePlayInTable:(ChessTable*)table;
 

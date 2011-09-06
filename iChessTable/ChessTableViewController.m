@@ -234,7 +234,7 @@
 -(void)pieceViewIsSelected:(ChessPieceView*)pieceView{
     if (self.selectedPieceView == nil || self.selectedPieceView.piece.color == pieceView.piece.color){
     //if select is allowed
-        if ([self.game.judge doesPieceCanBeSelected:pieceView.piece table:self.table]){
+        if ([self.game.judge piece:pieceView.piece canBeSelectedInTable:self.table] ){
             if (((self.selectedPieceView != nil)&&(self.selectedPieceView != pieceView)&&self.selectedPieceView.isMoving == NO) || 
                 self.selectedPieceView == nil){
                 self.selectedPieceView = pieceView;
@@ -250,7 +250,8 @@
     //more animation
 }
 //event from piece view
--(BOOL)pieceViewIsDropped:(ChessPieceView*)pieceView{
+//piece view is end of moving
+-(BOOL)pieceViewIsEndOfTouching:(ChessPieceView*)pieceView{
     //if it's not the selected one then skip all steps, nothing happens
     BOOL result = YES;
     if (pieceView == self.selectedPieceView){
@@ -259,23 +260,24 @@
             //check if piece is in the scope and piece can be moved to the current position
             MatrixPoint* to = [self.tableView matrixPointFromPixarPoint:pieceView.acturalCenter];
             if (CGRectContainsPoint(self.tableView.tableRect, pieceView.acturalCenter) &&
-                [self.game.judge doesPieceCanBeDropped:pieceView.piece 
-                                                    to:to
-                                                 table:self.table]){
-                //dropping to current location is legal\
-                //send out piece is moved notification to table
-                MatrixPoint* from = pieceView.piece.origin;
-                [self postNotificaiotnWithName:NOTIFICATION_PLAYER_PIECE_MOVE
-                                         piece:pieceView.piece 
-                                          from:from
-                                            to:to];
-            }else{
-                //dropping to current location is not legal
-                //move back
-                [pieceView moveBack];
-            }
+                [self.game.judge piece:pieceView.piece 
+                        canBeMovedFrom:pieceView.piece.origin
+                                    to:to
+                                 table:self.table]){
+                    //dropping to current location is legal\
+                    //send out piece is moved notification to table
+                    MatrixPoint* from = pieceView.piece.origin;
+                    [self postNotificaiotnWithName:NOTIFICATION_PLAYER_PIECE_MOVE
+                                             piece:pieceView.piece 
+                                              from:from
+                                                to:to];
+                }else{
+                    //dropping to current location is not legal
+                    //move back
+                    [pieceView moveBack];
+                }
             //set the selected piece view = nil
-            self.selectedPieceView = nil;
+//            self.selectedPieceView = nil;
         }
     }else{
         result = NO;
@@ -283,7 +285,9 @@
     
     return result;
 }
+
 //event from piece view
+//piece view is in the moving
 -(void)pieceViewIsMoving:(ChessPieceView*)pieceView{
 
 }
@@ -295,7 +299,7 @@
 -(BOOL)doesPieceViewCanBeMoved:(ChessPieceView*)pieceView{
     BOOL result = NO;
     //if the selected view is the incoming view and it can be moved
-    if (pieceView == self.selectedPieceView && [self.game.judge doesPieceCanBeMoved:pieceView.piece table:self.table]){
+    if (pieceView == self.selectedPieceView && [self.game.judge isMovingAllowed]){
         result = YES;
     }
     
@@ -314,15 +318,13 @@
     MatrixPoint* from = nil;
     MatrixPoint* to = [tableView matrixPointFromPixarPoint:location];
     
-    if ([self.game.judge doesPieceCanBeMoved:nil table:self.table] == YES){//if piece is allowed to be moved
-        if (self.selectedPieceView != nil){//if no piece view has been selected
+    if ([self.game.judge isMovingAllowed] == YES){//if piece is allowed to be moved
+        if (self.selectedPieceView != nil){//if one piece view has been selected
             //move event
             //add some animation?
             //send out move notification
             if (CGRectContainsPoint(self.tableView.tableRect, self.selectedPieceView.acturalCenter) &&
-                [self.game.judge doesPieceCanBeDropped:self.selectedPieceView.piece 
-                                                    to:to
-                                                 table:self.table]){
+                [self.game.judge piece:self.selectedPieceView.piece canBeMovedFrom:self.selectedPieceView.piece.origin to:to table:self.table]){
                 from = self.selectedPieceView.piece.origin;
                 [self postNotificaiotnWithName:NOTIFICATION_PLAYER_PIECE_MOVE
                                          piece:self.selectedPieceView.piece
@@ -331,6 +333,7 @@
                 }else{
                     //notify that moving is not legal
                     //add more code here
+                    //keep the selected piece view
                     
                 }
         }
@@ -338,10 +341,12 @@
         //drop event
         //add some animation?
         //send out drop notification
-        [self postNotificaiotnWithName:NOTIFICATION_PLAYER_PIECE_DROP 
-                                 piece:nil//default piece? or selected one?
-                                  from:from
-                                    to:to];
+        if ([self.game.judge piece:self.selectedPieceView.piece canBeDroppedTo:to table:self.table]){
+            [self postNotificaiotnWithName:NOTIFICATION_PLAYER_PIECE_DROP 
+                                     piece:nil//default piece? or selected one?
+                                      from:from
+                                        to:to];
+        }
     }
 }
 
