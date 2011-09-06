@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ControlPanelWidget : UIView
+@interface ControlPanelWidget : UIView{
+    UIImageView* _presentImageView;
+    
+    BOOL _enable;
+    NSString* _notificationName;
+}
+
+@property (nonatomic, retain) UIImageView* presentImageView;
+@property (nonatomic, assign, setter = setEnable:) BOOL enable;
+@property (nonatomic, retain) NSString* notificationName;
+
+-(void)sendNotification;
 
 @end

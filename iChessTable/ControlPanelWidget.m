@@ -10,6 +10,30 @@
 
 @implementation ControlPanelWidget
 
+@synthesize presentImageView = _presentImageView;
+@synthesize enable = _enable;
+@synthesize notificationName = _notificationName;
+
+-(void)setEnable:(BOOL)enable{
+    _enable = enable;
+    //add more code here
+    //change the appearence if needed
+    /*
+    switch(_enable){
+        case YES:
+            break;
+        case NO:
+            break;
+     }
+     */
+}
+
+-(void)dealloc{
+    self.presentImageView = nil;
+    self.notificationName = nil;
+    [super dealloc];
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -27,5 +51,25 @@
     // Drawing code
 }
 */
+
+//touch began
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+}
+
+//touches moved
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+
+}
+
+//touches ended
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+
+}
+
+//touches cancelled
+-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
+
+}
 
 @end
