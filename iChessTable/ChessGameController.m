@@ -144,32 +144,39 @@
 //NOTIFICATION_REPLAY_START
 -(void)notificationReplayStart:(NSNotification*)notification{
     DebugLog(@"NOTIFICATION_REPLAY_START is received", nil);
-    //get a notification from view controller that player is moving a piece now
 
 }
 //NOTIFICATION_REPLAY_END
 -(void)notificationReplayEnd:(NSNotification*)notification{
     DebugLog(@"NOTIFICATION_REPLAY_END is received", nil);
-    //get a notification from view controller that player is moving a piece now
 
 }
 //NOTIFICATION_REPLAY_PAUSE_RESUME
 -(void)notificationReplayPauseResume:(NSNotification*)notification{
     DebugLog(@"NOTIFICATION_REPLAY_PAUSE_RESUME is received", nil);
-    //get a notification from view controller that player is moving a piece now
 
 }
 //NOTIFICATION_REPLAY_FORWARD
 -(void)notificationReplayForward:(NSNotification*)notification{
     DebugLog(@"NOTIFICATION_REPLAY_PAUSE_FORWARD is received", nil);
-    //get a notification from view controller that player is moving a piece now
 
 }
 //NOTIFICATION_REPLAY_REWARD
 -(void)notificationReplayReward:(NSNotification*)notification{
     DebugLog(@"NOTIFICATION_REPLAY_PAUSE_REWARD is received", nil);
-    //get a notification from view controller that player is moving a piece now
 
+}
+//NOTIFICATION_PLAYER_UNDO
+-(void)notificationPlayerUndo:(NSNotification*)notification{
+    DebugLog(@"NOTIFICATION_PLAYER_UNDO is received", nil);
+    //undo happens while another player is playing
+    //
+    
+}
+//NOTIFICATION_PLAYER_REDO
+-(void)notificationPlayerRedo:(NSNotification*)notification{
+    DebugLog(@"NOTIFICATION_PLAYER_REDO is received", nil);
+    
 }
 
 - (id)init
@@ -210,30 +217,54 @@
                                                  name:NOTIFICATION_PLAYER_PIECE_MOVE
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(notificationRelayStart:) 
+                                             selector:@selector(notificationReplayStart:) 
                                                  name:NOTIFICATION_REPLAY_START
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(notificationRelayEnd:) 
+                                             selector:@selector(notificationReplayEnd:) 
                                                  name:NOTIFICAITON_REPLAY_END
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(notificationRelayPauseResume:) 
+                                             selector:@selector(notificationReplayPauseResume:) 
                                                  name:NOTIFICATION_REPLAY_PAUSE_RESUME
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(notificationRelayForward:) 
+                                             selector:@selector(notificationReplayForward:) 
                                                  name:NOTIFICATION_REPLAY_FORWARD
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(notificationRelayReward:) 
+                                             selector:@selector(notificationReplayReward:) 
                                                  name:NOTIFICATION_REPLAY_REWARD
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(notificationPlayerUndo:) 
+                                                 name:NOTIFICATION_PLAYER_ACTION_UNDO
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(notificationPlayerRedo:)
+                                                 name:NOTIFICATION_PLAYER_ACTION_REDO
                                                object:nil];
 }
 
 //remove observer for all notifications
 -(void)unregisterNotifications{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+-(ChessPlayer*)playerByColor:(ChessPieceColor)color{
+    return _players[color];
+}
+
+-(ChessPlayer*)playerByType:(ChessPlayerType)type{
+    ChessPlayer* player = nil;
+    for (int i = 0; i<ChessMaxColor; i++){
+        if (_players[i].type == type){
+            player = _players[i];
+            break;
+        }
+    }
+    
+    return player;
 }
 
 @end

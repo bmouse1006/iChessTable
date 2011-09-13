@@ -20,6 +20,8 @@
     UIView* _controlPanelLeftContainer;
     UIView* _controlPanelRightContainer;
     UIView* _chessTableViewContainer;
+    
+    ChessPieceColor _choosenColor;
 }
 
 @property (nonatomic, retain) ChessGameController* game;

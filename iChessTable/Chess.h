@@ -34,7 +34,8 @@
 
 +(Chess*)chessWithBundleName:(NSString*)name;
 +(Chess*)chessWithPropertyList:(NSDictionary*)plist;
-
+//get current activated chess instance
++(Chess*)currentChess;
 //get an instance of piece by kind and color, in the piece pool
 -(ChessPiece*)getPieceByKind:(NSString*)kind color:(ChessPieceColor)color;
 //get an instance for default type of piece, by color

@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ChessPlayer.h"
 #import "ChessPiece.h"
 
-@class Chess, ChessJudge, ChessPlayer;
+@class Chess, ChessJudge;
 
 @interface ChessGameController : NSObject{
     Chess* _chess;
@@ -35,6 +36,8 @@
 
 -(void)registerNotifications;
 -(void)unregisterNotifications;
-
+//get a player by given color or type
+-(ChessPlayer*)playerByColor:(ChessPieceColor)color;
+-(ChessPlayer*)playerByType:(ChessPlayerType)type;
 
 @end

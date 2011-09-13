@@ -38,9 +38,6 @@
 		22291E7813F52C0A00D9F91D /* NSString+ChessPieceColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 22291E7713F52C0A00D9F91D /* NSString+ChessPieceColor.m */; };
 		2247504113FE0EFB0043E1F4 /* NSArray+ChessHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2247504013FE0EFA0043E1F4 /* NSArray+ChessHelper.m */; };
 		2247504E13FE5DF80043E1F4 /* ChessPieceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2247504D13FE5DF80043E1F4 /* ChessPieceView.m */; };
-		224A3EA6140E2B50007CF045 /* Othello.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A3EA5140E2B50007CF045 /* Othello.png */; };
-		224A3EAA140E36E4007CF045 /* othello_round_chessWhiteColor.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A3EA8140E36E4007CF045 /* othello_round_chessWhiteColor.png */; };
-		224A3EAB140E36E4007CF045 /* othello_round_chessBlackColor.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A3EA9140E36E4007CF045 /* othello_round_chessBlackColor.png */; };
 		224A3EB1140F85D1007CF045 /* MultiTouchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 224A3EB0140F85D1007CF045 /* MultiTouchImageView.m */; };
 		224B6F7B14024FFD0042FDC3 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224B6F7914024FFC0042FDC3 /* GameViewController.m */; };
 		224B6F7C14024FFD0042FDC3 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224B6F7A14024FFC0042FDC3 /* GameViewController.xib */; };
@@ -63,6 +60,16 @@
 		2282D96F13F56FE3008CA309 /* OthelloRules.m in Sources */ = {isa = PBXBuildFile; fileRef = 2282D96E13F56FE3008CA309 /* OthelloRules.m */; };
 		22AE8EC9140D1E23005BE331 /* StandGameIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE8EC8140D1E23005BE331 /* StandGameIcon.m */; };
 		22AE8ECC140D1E39005BE331 /* StandGameIcon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22AE8ECB140D1E39005BE331 /* StandGameIcon.xib */; };
+		22BA0631141F634400F0C102 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BA062E141F634400F0C102 /* back.png */; };
+		22BA0632141F634400F0C102 /* undo.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BA062F141F634400F0C102 /* undo.png */; };
+		22BA0633141F634400F0C102 /* redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BA0630141F634400F0C102 /* redo.png */; };
+		22BA0636141F63D500F0C102 /* othello_round_chessBlackColor.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BA0634141F63D500F0C102 /* othello_round_chessBlackColor.png */; };
+		22BA0637141F63D500F0C102 /* othello_round_chessWhiteColor.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BA0635141F63D500F0C102 /* othello_round_chessWhiteColor.png */; };
+		22BA063E141F691000F0C102 /* redlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BA063C141F690F00F0C102 /* redlight.png */; };
+		22BA063F141F691000F0C102 /* greenlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BA063D141F690F00F0C102 /* greenlight.png */; };
+		22BA0642141F6C9900F0C102 /* go.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BA0640141F6C9800F0C102 /* go.png */; };
+		22BA0643141F6C9900F0C102 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BA0641141F6C9900F0C102 /* stop.png */; };
+		22D689F8141904AE00DEA3A7 /* ControlPanelWidgets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22D689F7141904AE00DEA3A7 /* ControlPanelWidgets.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,9 +135,6 @@
 		2247504C13FE5DF80043E1F4 /* ChessPieceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessPieceView.h; sourceTree = "<group>"; };
 		2247504D13FE5DF80043E1F4 /* ChessPieceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessPieceView.m; sourceTree = "<group>"; };
 		2247505013FEB77A0043E1F4 /* ChessNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessNotifications.h; sourceTree = "<group>"; };
-		224A3EA5140E2B50007CF045 /* Othello.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Othello.png; path = ../../../../../../Downloads/Othello.png; sourceTree = "<group>"; };
-		224A3EA8140E36E4007CF045 /* othello_round_chessWhiteColor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = othello_round_chessWhiteColor.png; path = ../../../../../../Desktop/othello_round_chessWhiteColor.png; sourceTree = "<group>"; };
-		224A3EA9140E36E4007CF045 /* othello_round_chessBlackColor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = othello_round_chessBlackColor.png; path = ../../../../../../Desktop/othello_round_chessBlackColor.png; sourceTree = "<group>"; };
 		224A3EAF140F85D0007CF045 /* MultiTouchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiTouchImageView.h; path = ../../../../../../Desktop/MultiTouchImageView.h; sourceTree = "<group>"; };
 		224A3EB0140F85D1007CF045 /* MultiTouchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultiTouchImageView.m; path = ../../../../../../Desktop/MultiTouchImageView.m; sourceTree = "<group>"; };
 		224B6F7814024FFC0042FDC3 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
@@ -164,6 +168,16 @@
 		22AE8EC7140D1E23005BE331 /* StandGameIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandGameIcon.h; sourceTree = "<group>"; };
 		22AE8EC8140D1E23005BE331 /* StandGameIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandGameIcon.m; sourceTree = "<group>"; };
 		22AE8ECB140D1E39005BE331 /* StandGameIcon.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StandGameIcon.xib; sourceTree = "<group>"; };
+		22BA062E141F634400F0C102 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		22BA062F141F634400F0C102 /* undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undo.png; sourceTree = "<group>"; };
+		22BA0630141F634400F0C102 /* redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redo.png; sourceTree = "<group>"; };
+		22BA0634141F63D500F0C102 /* othello_round_chessBlackColor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = othello_round_chessBlackColor.png; sourceTree = "<group>"; };
+		22BA0635141F63D500F0C102 /* othello_round_chessWhiteColor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = othello_round_chessWhiteColor.png; sourceTree = "<group>"; };
+		22BA063C141F690F00F0C102 /* redlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redlight.png; sourceTree = "<group>"; };
+		22BA063D141F690F00F0C102 /* greenlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenlight.png; sourceTree = "<group>"; };
+		22BA0640141F6C9800F0C102 /* go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = go.png; sourceTree = "<group>"; };
+		22BA0641141F6C9900F0C102 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		22D689F7141904AE00DEA3A7 /* ControlPanelWidgets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ControlPanelWidgets.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +333,7 @@
 		2273CDF314160CAF00E256E7 /* Game Screen */ = {
 			isa = PBXGroup;
 			children = (
+				22F2346F141F0749009F37B7 /* Images */,
 				2247504C13FE5DF80043E1F4 /* ChessPieceView.h */,
 				2247504D13FE5DF80043E1F4 /* ChessPieceView.m */,
 				2204934014034FF3007CB4AB /* ChessTableView.h */,
@@ -371,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				2282D96B13F56F25008CA309 /* Othello */,
+				22D689F7141904AE00DEA3A7 /* ControlPanelWidgets.plist */,
 				2282D96913F53EF0008CA309 /* ChessTemplate.plist */,
 				227AA557140CF3A0001577DA /* ChessList.plist */,
 			);
@@ -381,7 +397,6 @@
 			isa = PBXGroup;
 			children = (
 				2282D96C13F56F44008CA309 /* piecesImages */,
-				224A3EA5140E2B50007CF045 /* Othello.png */,
 				2282D96313F539BE008CA309 /* Othello.plist */,
 				2282D96D13F56FE3008CA309 /* OthelloRules.h */,
 				2282D96E13F56FE3008CA309 /* OthelloRules.m */,
@@ -392,10 +407,24 @@
 		2282D96C13F56F44008CA309 /* piecesImages */ = {
 			isa = PBXGroup;
 			children = (
-				224A3EA8140E36E4007CF045 /* othello_round_chessWhiteColor.png */,
-				224A3EA9140E36E4007CF045 /* othello_round_chessBlackColor.png */,
+				22BA0634141F63D500F0C102 /* othello_round_chessBlackColor.png */,
+				22BA0635141F63D500F0C102 /* othello_round_chessWhiteColor.png */,
 			);
 			name = piecesImages;
+			sourceTree = "<group>";
+		};
+		22F2346F141F0749009F37B7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				22BA0640141F6C9800F0C102 /* go.png */,
+				22BA0641141F6C9900F0C102 /* stop.png */,
+				22BA063C141F690F00F0C102 /* redlight.png */,
+				22BA063D141F690F00F0C102 /* greenlight.png */,
+				22BA062E141F634400F0C102 /* back.png */,
+				22BA062F141F634400F0C102 /* undo.png */,
+				22BA0630141F634400F0C102 /* redo.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,6 +477,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = 22291E1013F51C7B00D9F91D;
 			productRefGroup = 22291E1C13F51C7B00D9F91D /* Products */;
@@ -479,10 +509,17 @@
 				227AA558140CF3A1001577DA /* ChessList.plist in Resources */,
 				227AA55F140D17ED001577DA /* StandTableViewCell.xib in Resources */,
 				22AE8ECC140D1E39005BE331 /* StandGameIcon.xib in Resources */,
-				224A3EA6140E2B50007CF045 /* Othello.png in Resources */,
-				224A3EAA140E36E4007CF045 /* othello_round_chessWhiteColor.png in Resources */,
-				224A3EAB140E36E4007CF045 /* othello_round_chessBlackColor.png in Resources */,
 				2200A1E414161ECB00D00376 /* PlayerControlPanelController.xib in Resources */,
+				22D689F8141904AE00DEA3A7 /* ControlPanelWidgets.plist in Resources */,
+				22BA0631141F634400F0C102 /* back.png in Resources */,
+				22BA0632141F634400F0C102 /* undo.png in Resources */,
+				22BA0633141F634400F0C102 /* redo.png in Resources */,
+				22BA0636141F63D500F0C102 /* othello_round_chessBlackColor.png in Resources */,
+				22BA0637141F63D500F0C102 /* othello_round_chessWhiteColor.png in Resources */,
+				22BA063E141F691000F0C102 /* redlight.png in Resources */,
+				22BA063F141F691000F0C102 /* greenlight.png in Resources */,
+				22BA0642141F6C9900F0C102 /* go.png in Resources */,
+				22BA0643141F6C9900F0C102 /* stop.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +691,12 @@
 				GCC_PREFIX_HEADER = "iChessTable/iChessTable-Prefix.pch";
 				INFOPLIST_FILE = "iChessTable/iChessTable-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../Downloads/author/lib/com/sun/jna/darwin\"",
+					"\"$(SRCROOT)/../../../../../Downloads/author/lib/hunspell\"",
+					"\"$(SRCROOT)/../../../../../Downloads\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -666,6 +709,12 @@
 				GCC_PREFIX_HEADER = "iChessTable/iChessTable-Prefix.pch";
 				INFOPLIST_FILE = "iChessTable/iChessTable-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../Downloads/author/lib/com/sun/jna/darwin\"",
+					"\"$(SRCROOT)/../../../../../Downloads/author/lib/hunspell\"",
+					"\"$(SRCROOT)/../../../../../Downloads\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

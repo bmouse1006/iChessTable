@@ -21,6 +21,8 @@
 @synthesize pieceModel = _pieceModel;
 @synthesize aiClass = _aiClass;
 
+static Chess* _currentChess;
+
 #pragma class method
 +(Chess*)chessWithBundleName:(NSString*)name{
     
@@ -68,6 +70,10 @@
     return newChess;
 }
 
++(Chess*)currentChess{
+    return _currentChess;
+}
+
 #pragma instance method
 -(ChessPiece*)getPieceByKind:(NSString*)kind color:(ChessPieceColor)color{
     NSMutableDictionary* piecesForColor = [self.pieces valueForKey:[NSString ChessPieceColorString:color]];
@@ -100,6 +106,7 @@
     self = [super init];
     if (self) {
         // Initialization code here.
+        _currentChess = self;
     }
     
     return self;
@@ -112,6 +119,7 @@
     self.rules = nil;
     self.pieceModel = nil;
     self.aiClass = nil;
+    _currentChess = nil;
     [super dealloc];
 }
 

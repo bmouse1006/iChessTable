@@ -38,7 +38,6 @@
     [self shadowAndRoundCorner:self.controlPanelLeftContainer];
     [self shadowAndRoundCorner:self.controlPanelRightContainer];
     PlayerControlPanelController* controller = [[PlayerControlPanelController alloc] init];
-    controller.player = 
     self.panelControllerLeft = controller;
     [controller release];
     controller = [[PlayerControlPanelController alloc] init];
@@ -46,22 +45,30 @@
     [controller release];
     switch (self.game.mode) {
         case ChessGameModeBlueTooth:
-            self.panelControllerRight.type = ChessPlayerTypeBlueTooth;
+            self.panelControllerLeft.player = [self.game playerByType:ChessPlayerTypePeople];
+            self.panelControllerRight.player = [self.game playerByType:ChessPlayerTypeBlueTooth];
             break;
         case ChessGameModeOnePlayer:
-            self.panelControllerRight.type = ChessPlayerTypeAI;
+            self.panelControllerLeft.player = [self.game playerByType:ChessPlayerTypePeople];
+            self.panelControllerRight.player = [self.game playerByType:ChessPlayerTypeAI];
             break;
         case ChessGameModeGameCenter:
-            self.panelControllerRight.type = ChessPlayerTypeGameCenter;
+            self.panelControllerLeft.player = [self.game playerByType:ChessPlayerTypePeople];
+            self.panelControllerRight.player = [self.game playerByType:ChessPlayerTypeGameCenter];
             break;
         case ChessGameModeTwoPlayers:
-            self.panelControllerRight.type = ChessPlayerTypePeople;
+            //left white color
+            //right black color
+            self.panelControllerLeft.player = [self.game playerByColor:ChessWhiteColor];
+            self.panelControllerRight.player = [self.game playerByColor:ChessBlackColor];
         default:
             break;
     }
-    //turn it upside down
-    self.panelControllerRight.view.transform = CGAffineTransformMake(-1, 0, 0, -1, 0, 0);
-    //compose button in control panel
+    //if two player play
+    //turn the right control panel upside down
+    if (self.game.mode == ChessGameModeTwoPlayers){
+        self.panelControllerRight.view.transform = CGAffineTransformMake(-1, 0, 0, -1, 0, 0);
+    }
     //add to the containers
     [self.controlPanelLeftContainer addSubview:self.panelControllerLeft.view];
     [self.controlPanelRightContainer addSubview:self.panelControllerRight.view];
@@ -97,6 +104,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        _choosenColor = color;
         self.game = [ChessGameController gameControllerWithChessBundleName:name 
                                                                       mode:mode
                                                               choosenColor:color];
@@ -134,6 +142,7 @@
     self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
     // Do any additional setup after loading the view from its nib.
     [self composeSubViews];
+    [self.view bringSubviewToFront:self.chessTableViewContainer];
     [self.game start];
 }
 
@@ -147,7 +156,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-	return YES;
+	return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft)||(interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
 #pragma mark - notification selectors

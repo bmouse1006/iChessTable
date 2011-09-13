@@ -5,7 +5,7 @@
 //  Created by Jin Jin on 11-8-19.
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
-#import <QuartzCore/CALayer.h>
+#import <QuartzCore/QuartzCore.h>
 #import "ChessPieceView.h"
 #import "ChessPiece.h"
 
